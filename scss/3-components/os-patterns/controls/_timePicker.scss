@@ -1,0 +1,48 @@
+/* $4.2.12 - Patterns - Controls - TimePicker */
+
+.time-picker {
+  .dropdown-content-list .time-option[disabled="disabled"] {
+    color: var(--color-neutral-6);
+  }
+
+  .select {
+    background-color: transparent;
+    border-radius: 0;
+    border: 0;
+    height: 100%;
+    padding: 0;
+    position: relative;
+
+    &:hover,
+    &:focus {
+      border: 0;
+    }
+  }
+
+  .is--visible .dropdown-header.select {
+    border: 0;
+  }
+
+  .dropdown-header-text {
+    width: 100%;
+  }
+
+  .dropdown-icon {
+    position: absolute;
+    right: 16px;
+    top: 8px
+  }
+
+  .dropdown-content {
+    -servicestudio-display: none;
+  }
+}
+
+.time-option-selected {
+  background-color: var(--color-neutral-2);
+}
+
+.is-rtl .time-picker .dropdown-icon {
+  left: 16px;
+  right: auto;
+}

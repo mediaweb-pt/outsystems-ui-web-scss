@@ -1,0 +1,53 @@
+/* $4.2.11 - Patterns - Controls - SearchBalloon */
+.search-balloon {
+  position: relative;
+
+  [data-balloon="balloon"] {
+    cursor: auto;
+  }
+
+  .tippy-popper {
+    width: 100% !important;
+  }
+
+  .balloon {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .tippy-arrow {
+    display: none;
+  }
+
+  .tippy-tooltip {
+    max-height: 300px;
+    overflow-y: auto;
+    padding: var(--space-s) var(--space-none);
+  }
+
+  .balloon-content {
+    padding: var(--space-none);
+    -servicestudio-min-height: 120px;
+  }
+
+  .tippy-popper[x-placement^=bottom] .tippy-tooltip {
+    transform: translateY(var(--space-xs));
+  }
+
+  a {
+    align-items: center;
+    color: var(--color-neutral-9);
+    display: flex;
+    height: 40px;
+    padding: var(--space-none) var(--space-base);
+
+    &:hover {
+      background-color: var(--color-neutral-2);
+    }
+  }
+}
+
+.search-balloon-answers {
+  position: relative;
+  background: var(--color-neutral-0);
+}

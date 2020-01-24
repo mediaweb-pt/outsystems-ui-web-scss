@@ -1,0 +1,80 @@
+/* $4.4.4 - Patterns - Navigation - Sidebar */
+.sidebar {
+  -servicestudio-display: flex;
+  -servicestudio-justify-content: flex-end;
+}
+
+.sidebar-container {
+  background: var(--color-neutral-0);
+  box-shadow: var(--shadow-l);
+  height: 100vh;
+  position: fixed;
+  overflow-y: auto;
+  right: 0;
+  top: 0;
+  transform: translateX(100%);
+  width: 500px;
+  z-index: 150;
+  -servicestudio-position: relative;
+  -servicestudio-height: auto;
+  -servicestudio-transform: translateX(0);
+}
+
+.sidebar-header,
+.sidebar-content {
+  padding: var(--space-base) var(--space-m);
+}
+
+.sidebar-overlay {
+  background-color: rgba(190, 190, 190, .25);
+  cursor: pointer;
+  height: 100vh;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100vw;
+  z-index: 103;
+  -servicestudio-display: none;
+}
+
+.sidebar.is--visible .sidebar-overlay {
+  pointer-events: initial;
+}
+
+.phone .sidebar-container {
+  width: 85vw;
+}
+
+/* Fix for usage inside tabs*/
+
+.tabs {
+
+  .is--visible,
+  .is--hidden {
+
+    .sidebar-container.enter-right,
+    .sidebar-container.leave-right,
+    .sidebar-overlay.enter-fade,
+    .sidebar-overlay.leave-fade {
+      animation-name: none;
+    }
+  }
+
+  .sidebar-container,
+  .sidebar-overlay {
+    transition: transform 1000ms ease-out, opacity 1000ms ease-out;
+    will-change: transform, opacity;
+  }
+
+  .is--visible {
+    .sidebar-container {
+      transform: translateX(0) translateZ(0);
+    }
+
+    .sidebar-overlay {
+      opacity: 1;
+    }
+  }
+}

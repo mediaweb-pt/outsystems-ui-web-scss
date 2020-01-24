@@ -1,0 +1,75 @@
+/* $4.1.12 - Patterns - Content - Modal */
+
+.modal {
+  display: flex;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  padding: var(--space-l);
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  transition: opacity 330ms ease;
+  width: 100%;
+  z-index: 102;
+  -servicestudio-pointer-events: all;
+  -servicestudio-position: relative;
+  -servicestudio-opacity: 1;
+  -servicestudio-z-index: 1;
+
+  &.is--visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .animate {
+    animation-duration: 500ms;
+  }
+
+  &-overlay {
+    background-color: rgba(0, 0, 0, .25);
+  }
+
+  &-wrapper {
+    background-color: var(--color-neutral-0);
+    border-radius: var(--border-radius-soft);
+    box-shadow: var(--shadow-xl);
+    max-height: 100%;
+    max-width: 500px;
+    overflow: auto;
+    width: 100%;
+    -servicestudio-margin: 0 auto;
+  }
+
+  &-top {
+    display: flex;
+    padding: var(--space-m) var(--space-m) var(--space-none);
+  }
+
+  &-title {
+    flex: 1;
+  }
+
+  &-close {
+    a {
+
+      &,
+      &:visited {
+        color: var(--color-neutral-8);
+      }
+
+      &:hover {
+        color: var(--color-neutral-9);
+      }
+    }
+  }
+
+  &-content {
+    padding: var(--space-m);
+  }
+
+  &-footer {
+    border-top: var(--border-size-s) solid var(--color-neutral-4);
+    padding: var(--space-m);
+  }
+}

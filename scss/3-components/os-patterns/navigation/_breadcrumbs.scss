@@ -1,0 +1,23 @@
+/* $4.4.1 - Patterns - Navigation - Breadcrumbs */
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumbs-item {
+  align-items: center;
+  color: var(--color-neutral-8);
+  display: inline-flex;
+
+  .icon {
+    color: var(--color-neutral-6);
+    display: inline-flex;
+    justify-content: center;
+    margin: var(--space-none) var(--space-s);
+
+    .fa-fw {
+      font-size: var(--font-size-xs);
+      width: auto;
+    }
+  }
+}

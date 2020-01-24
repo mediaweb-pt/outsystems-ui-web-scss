@@ -1,0 +1,125 @@
+/* $4.4.2 - Patterns - Navigation - NavigationBar */
+.navigation-bar {
+  display: flex;
+  flex-direction: column;
+
+  a {
+
+    &,
+    &:visited {
+      align-items: center;
+      color: var(--color-neutral-8);
+      display: flex;
+    }
+  }
+
+  &.is--sticky {
+    position: sticky;
+  }
+}
+
+.phone .navigation-bar {
+  position: relative;
+}
+
+.ie10,
+.ie11 {
+  .is--sticky {
+    position: fixed;
+  }
+}
+
+.navigation-bar a:hover,
+.navigation-bar-item-title:hover {
+  color: var(--color-neutral-9);
+}
+
+.navigation-bar-item {
+  display: flex;
+  flex-direction: column;
+
+  &.is--open .navigation-bar-item-title a {
+    color: var(--color-primary);
+    font-weight: var(--font-semi-bold);
+  }
+
+  &.is--active {
+    .navigation-bar-item-title {
+      color: var(--color-neutral-9);
+      font-weight: var(--font-semi-bold);
+
+      a {
+        color: var(--color-primary);
+        font-weight: var(--font-semi-bold);
+      }
+    }
+  }
+
+  .navigation-bar-item-content {
+    display: block;
+    overflow: hidden;
+
+    &.is--expanded {
+      height: auto;
+      visibility: visible;
+    }
+
+    &.is--animating {
+      transition: all 300ms ease-in-out;
+    }
+  }
+
+  .navigation-bar-item-content {
+
+    &,
+    &.is--collapsed {
+      height: 0;
+      visibility: hidden;
+    }
+  }
+}
+
+.navigation-bar-item-title {
+  color: var(--color-neutral-8);
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  margin: var(--space-s) var(--space-none);
+}
+
+.navigation-bar-item-content {
+  display: flex;
+  flex-direction: column;
+  padding-left: var(--space-base);
+
+  a {
+    margin: var(--space-xs) var(--space-none);
+  }
+}
+
+.navigation-bar-item-subitem:not(:last-child) {
+  margin-bottom: var(--space-s);
+}
+
+.ListRecords {
+
+  .navigation-bar-item-title,
+  .navigation-bar-item-subitem {
+    margin: var(--space-xs) 0;
+  }
+
+  .navigation-bar-item-subitem:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.navigation-bar-item-subitem.is--active,
+.navigation-bar-item-subitem.is--active a,
+.ListRecords .navigation-bar-item-subitem.is--active,
+.ListRecords .navigation-bar-item-subitem.is--active a {
+  color: var(--color-primary);
+  font-weight: var(--font-semi-bold);
+}
+
+.is-rtl .navigation-bar-item-content {
+  padding-right: var(--space-base);
+}

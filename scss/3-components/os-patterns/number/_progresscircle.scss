@@ -1,0 +1,36 @@
+/* $4.5.5 - Patterns - Numbers - ProgressCircle */
+.progress-circle {
+  padding-top: 100%;
+  position: relative;
+  -servicestudio-border: 8px solid #a6a3a3;
+  -servicestudio-border-radius: 50%;
+  -servicestudio-height: 250px !important;
+  -servicestudio-width: 250px !important;
+  -servicestudio-padding-top: 0;
+
+  svg {
+    left: 0;
+    position: absolute;
+    stroke-linecap: round;
+    top: 0;
+  }
+}
+
+.progress-circle-content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.progress-semi-circle-content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.progress-circle-content,
+.progress-semi-circle-content {
+  text-align: center;
+}

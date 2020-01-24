@@ -1,0 +1,42 @@
+/* $4.1.2 - Patterns - Content - Alert */
+
+.alert {
+  align-items: center;
+  border-radius: var(--border-radius-soft);
+  color: var(--color-neutral-0);
+  display: flex;
+  padding: var(--space-base);
+
+  &-icon {
+    align-self: flex-start;
+    display: inline-flex;
+    font-size: 24px;
+    margin-right: var(--space-base);
+  }
+
+  &-message {
+    flex: 1;
+  }
+
+  &-close {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    height: 24px;
+    justify-content: center;
+    margin-left: var(--space-base);
+    margin-right: calc(-1 * var(--space-xs));
+    width: 24px;
+  }
+
+  &.is--hidden,
+  &-close.is--hidden {
+    display: none;
+  }
+
+  .fa-fw {
+    width: auto;
+  }
+
+
+}

@@ -1,0 +1,232 @@
+/* $4.8.1 - Patterns - Utilities - Animate */
+.animate-wrapper {
+  position: relative;
+  -servicestudio-height: auto;
+
+  .animate:empty {
+    -servicestudio-min-height: 80px;
+  }
+}
+
+.animate {
+  animation-duration: 1000ms;
+  animation-fill-mode: both;
+  transition-timing-function: ease-out;
+  will-change: transform;
+}
+
+.animate-slow {
+  animation-duration: 1500ms;
+}
+
+.animate-fast {
+  animation-duration: 500ms;
+}
+
+.is--visible {
+  .enter-fade {
+    animation-name: enter-fade;
+  }
+
+  .enter-top {
+    animation-name: enter-top;
+  }
+
+  .enter-right {
+    animation-name: enter-right;
+  }
+
+  .enter-bottom {
+    animation-name: enter-bottom;
+  }
+
+  .enter-left {
+    animation-name: enter-left;
+  }
+
+  .enter-scale {
+    animation-name: enter-scale;
+  }
+}
+
+.is--hidden {
+  .leave-fade {
+    animation-name: leave-fade;
+    pointer-events: none;
+  }
+
+  .leave-top {
+    animation-name: leave-top;
+    pointer-events: none;
+  }
+
+  .leave-right {
+    animation-name: leave-right;
+    pointer-events: none;
+  }
+
+  .leave-bottom {
+    animation-name: leave-bottom;
+    pointer-events: none;
+  }
+
+  .leave-left {
+    animation-name: leave-left;
+    pointer-events: none;
+  }
+
+  .leave-scale {
+    animation-name: leave-scale;
+    pointer-events: none;
+  }
+}
+
+@keyframes enter-fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes enter-top {
+  from {
+    opacity: 0;
+    transform: translateX(0) translateY(-100%) translateZ(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) translateY(0) translateZ(0);
+  }
+}
+
+@keyframes enter-right {
+  from {
+    opacity: 0;
+    transform: translateX(100%) translateY(0) translateZ(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) translateY(0) translateZ(0);
+  }
+}
+
+@keyframes enter-bottom {
+  from {
+    opacity: 0;
+    transform: translateX(0) translateY(100%) translateZ(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) translateY(0) translateZ(0);
+  }
+}
+
+@keyframes enter-left {
+  from {
+    opacity: 0;
+    transform: translateX(-100%) translateY(0) translateZ(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) translateY(0) translateZ(0);
+  }
+}
+
+@keyframes enter-scale {
+  from {
+    opacity: 0;
+    transform: scale(.5) translateZ(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateZ(0);
+  }
+}
+
+@keyframes leave-fade {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes leave-top {
+  from {
+    opacity: 1;
+    transform: translateX(0) translateY(0) translateZ(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateX(0) translateY(-100%) translateZ(0);
+  }
+}
+
+@keyframes leave-right {
+  from {
+    opacity: 1;
+    transform: translateX(0) translateY(0) translateZ(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateX(100%) translateY(0) translateZ(0);
+  }
+}
+
+@keyframes leave-bottom {
+  from {
+    opacity: 1;
+    transform: translateX(0) translateY(0) translateZ(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateX(0) translateY(100%) translateZ(0);
+  }
+}
+
+@-webkit-keyframes leave-left {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes leave-left {
+  from {
+    opacity: 1;
+    transform: translateX(0) translateY(0) translateZ(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateX(-100%) translateY(0) translateZ(0);
+  }
+}
+
+@keyframes leave-scale {
+  from {
+    opacity: 1;
+    transform: scale(1) translateZ(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(.5) translateZ(0);
+  }
+}

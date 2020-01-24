@@ -1,0 +1,11 @@
+/* $4.7.1 - Patterns - Structure - AlignCenter */
+.center-align {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.center-align.flex-direction-column {
+  justify-content: center;
+}

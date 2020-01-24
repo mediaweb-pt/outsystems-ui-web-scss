@@ -1,0 +1,70 @@
+/* $4.5.4 - Patterns - Numbers - ProgressBar */
+.progress-container,
+.progress-content {
+  display: flex;
+}
+
+.progress-container {
+  &.flex-direction-column {
+    .progress-content {
+
+      .progress-title,
+      .progress-value {
+        margin-bottom: var(--space-s);
+      }
+    }
+  }
+
+  &.flex-direction-row {
+    align-items: center;
+    flex-direction: row-reverse;
+
+    .progress {
+      margin-right: var(--space-s);
+    }
+
+    .progress-title {
+      display: none;
+    }
+  }
+
+  .progress {
+    flex: 1;
+  }
+
+  .progress-content {
+    justify-content: space-between;
+  }
+
+  .progress-title {
+    text-align: left;
+  }
+
+  .progress-value {
+    text-align: right;
+  }
+}
+
+.ie11,
+.ie10 {
+  .progress-container.flex-direction-column .progress {
+    flex: none;
+  }
+}
+
+.progress {
+  background-color: var(--color-neutral-3);
+  height: 100%;
+}
+
+.progress-bar-extra-small {
+  height: var(--space-xs);
+}
+
+.progress-bar-small {
+  height: var(--space-s);
+}
+
+.progress-bar-base {
+  height: var(--space-base);
+}

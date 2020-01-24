@@ -1,0 +1,32 @@
+/* $4.5.6 - Patterns - Numbers - UserAvatar */
+.user-avatar {
+  align-items: center;
+  background-color: var(--color-primary);
+  color: var(--color-neutral-0);
+  display: inline-flex;
+  font-weight: var(--font-semi-bold);
+  height: 32px;
+  justify-content: center;
+  text-transform: uppercase;
+  width: 32px;
+
+  &.background-neutral-0,
+  &.background-neutral-1,
+  &.background-neutral-2,
+  &.background-neutral-3,
+  &.background-neutral-4 {
+    color: var(--color-neutral-9);
+  }
+}
+
+.user-avatar-small {
+  font-size: var(--font-size-xs);
+  height: 24px;
+  width: 24px;
+}
+
+.user-avatar-medium {
+  font-size: var(--font-size-base);
+  height: 40px;
+  width: 40px;
+}

@@ -1,0 +1,48 @@
+/* $4.2.6 - Patterns - Controls - FileUpload */
+.file-upload {
+  align-items: center;
+  background: var(--color-neutral-0);
+  border: var(--border-size-s) solid var(--color-neutral-4);
+  border-radius: var(--border-radius-soft);
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space-base);
+  position: relative;
+  transition: all 180ms linear;
+
+  .file-upload-icon,
+  .file-upload-delete {
+    color: var(--color-neutral-5);
+  }
+
+  .file-upload-delete {
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 180ms linear;
+  }
+
+  .file-upload-message {
+    flex: 1;
+    padding-left: var(--space-base);
+    -servicestudio-z-index: 2;
+  }
+
+  .file-upload-widget input[type=file] {
+    cursor: pointer;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+  }
+
+  &.active {
+    .file-upload-delete {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+}

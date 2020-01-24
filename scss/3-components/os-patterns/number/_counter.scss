@@ -1,0 +1,26 @@
+/* $4.5.2 - Patterns - Numbers - Counter */
+.counter {
+  background-color: var(--color-neutral-0);
+  border: var(--border-size-s) solid var(--color-neutral-4);
+  box-shadow: var(--shadow-none);
+  display: flex;
+  justify-content: center;
+  padding: var(--space-none) var(--space-m);
+
+  .center-align {
+    width: 100%;
+
+    &.flex-direction-column {
+      justify-content: center;
+    }
+
+    &.flex-direction-row {
+      justify-content: space-between;
+    }
+  }
+
+  &[class*="background-"] {
+    border: var(--border-size-none);
+    color: var(--color-neutral-0);
+  }
+}

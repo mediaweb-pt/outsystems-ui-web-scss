@@ -1,0 +1,1312 @@
+/* $6.1.1 - Styles - Typography - Sizes Desktop */
+.font-size-display,
+.heading1,
+.heading2,
+.heading3,
+.heading4,
+.heading5,
+.heading6 {
+  color: var(--color-neutral-10);
+  font-weight: var(--font-semi-bold);
+  line-height: 1.25;
+}
+
+
+.font-size-display {
+  font-size: var(--font-size-display);
+}
+
+.heading1 {
+  font-size: var(--font-size-h1);
+}
+
+.heading2 {
+  font-size: var(--font-size-h2);
+}
+
+.heading3 {
+  font-size: var(--font-size-h3);
+}
+
+.heading4 {
+  font-size: var(--font-size-h4);
+}
+
+.heading5 {
+  font-size: var(--font-size-h5);
+}
+
+.heading6 {
+  font-size: var(--font-size-h6);
+}
+
+.font-size-base {
+  font-size: var(--font-size-base);
+}
+
+.font-size-s {
+  font-size: var(--font-size-s);
+}
+
+.font-size-xs {
+  font-size: var(--font-size-xs);
+}
+
+
+/* $6.1.2 - Styles - Typography - Sizes Tablet */
+.tablet {
+  .font-size-display {
+    --font-size-display: 34px;
+  }
+
+  .heading1 {
+    --font-size-h1: 30px;
+  }
+
+  .heading2 {
+    --font-size-h2: 26px;
+  }
+
+  .heading3 {
+    --font-size-h3: 24px;
+  }
+
+  .heading4 {
+    --font-size-h4: 21px;
+  }
+
+  .heading5 {
+    --font-size-h5: 19px;
+  }
+
+  .heading6 {
+    --font-size-h6: 17px;
+  }
+}
+
+
+
+/* $6.1.3 - Styles - Typography - Sizes Tablet */
+.phone {
+  .font-size-display {
+    --font-size-display: 32px;
+  }
+
+  .heading1 {
+    --font-size-h1: 28px;
+  }
+
+  .heading2 {
+    --font-size-h2: 24px;
+  }
+
+  .heading3 {
+    --font-size-h3: 22px;
+  }
+
+  .heading4 {
+    --font-size-h4: 20px;
+  }
+
+  .heading5 {
+    --font-size-h5: 18px;
+  }
+
+  .heading6 {
+    --font-size-h6: 16px;
+  }
+}
+
+
+
+/* $6.1.4 - Styles - Typography - Transform */
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* $6.1.5 - Styles - Typography - Weight */
+.font-light {
+  font-weight: var(--font-light);
+}
+
+.font-regular {
+  font-weight: var(--font-regular);
+}
+
+.font-semi-bold {
+  font-weight: var(--font-semi-bold);
+}
+
+.font-bold {
+  font-weight: var(--font-bold);
+}
+
+/* ================================================================ */
+/*  $6.2 - Styles - Colors                                          */
+/* ================================================================ */
+
+/* $6.2.1 - Styles - Colors - Brand */
+.background-primary {
+  background-color: var(--color-primary);
+}
+
+.background-secondary {
+  background-color: var(--color-secondary);
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-secondary {
+  color: var(--color-secondary);
+}
+
+/* Background and Text Colors used when IsLight parameter for Badge / Tag / UserInitials is True */
+.background-primary-lightest {
+  background-color: var(--color-neutral-0);
+}
+
+.background-secondary-lightest {
+  background-color: var(--color-neutral-0);
+}
+
+.text-primary-darker {
+  color: var(--color-primary);
+}
+
+.text-secondary-darker {
+  color: var(--color-secondary);
+}
+
+
+/* $6.2.2 - Styles - Colors - Extendend */
+$colors: 'red',
+'pink',
+'grape',
+'violet',
+'indigo',
+'blue',
+'cyan',
+'teal',
+'green',
+'lime',
+'yellow',
+'orange';
+
+@each $color in $colors {
+
+  .background-#{$color} {
+    &-lightest {
+      background-color: var(--color-#{$color}-lightest);
+    }
+
+    &-lighter {
+      background-color: var(--color-#{$color}-lighter);
+    }
+
+    &-light {
+      background-color: var(--color-#{$color}-light);
+    }
+
+    background-color: var(--color-#{$color});
+
+    &-dark {
+      background-color: var(--color-#{$color}-dark);
+    }
+
+    &-darker {
+      background-color: var(--color-#{$color}-darker);
+    }
+
+    &-darkest {
+      background-color: var(--color-#{$color}-darkest);
+    }
+  }
+
+  .text-#{$color} {
+    &-lightest {
+      color: var(--color-#{$color}-lightest);
+    }
+
+    &-lighter {
+      color: var(--color-#{$color}-lighter);
+    }
+
+    &-light {
+      color: var(--color-#{$color}-light);
+    }
+
+    color: var(--color-#{$color});
+
+    &-dark {
+      color: var(--color-#{$color}-dark);
+    }
+
+    &-darker {
+      color: var(--color-#{$color}-darker);
+    }
+
+    &-darkest {
+      color: var(--color-#{$color}-darkest);
+    }
+  }
+}
+
+
+/* $6.2.3 - Styles - Colors - Neutral */
+.background-transparent {
+  background-color: transparent;
+}
+
+.background-neutral-0 {
+  background-color: var(--color-neutral-0);
+}
+
+.background-neutral-1 {
+  background-color: var(--color-neutral-1);
+}
+
+.background-neutral-2 {
+  background-color: var(--color-neutral-2);
+}
+
+.background-neutral-3 {
+  background-color: var(--color-neutral-3);
+}
+
+.background-neutral-4 {
+  background-color: var(--color-neutral-4);
+}
+
+.background-neutral-5 {
+  background-color: var(--color-neutral-5);
+}
+
+.background-neutral-6 {
+  background-color: var(--color-neutral-6);
+}
+
+.background-neutral-7 {
+  background-color: var(--color-neutral-7);
+}
+
+.background-neutral-8 {
+  background-color: var(--color-neutral-8);
+}
+
+.background-neutral-9 {
+  background-color: var(--color-neutral-9);
+}
+
+.background-neutral-10 {
+  background-color: var(--color-neutral-10);
+}
+
+.text-neutral-0 {
+  color: var(--color-neutral-0);
+}
+
+.text-neutral-1 {
+  color: var(--color-neutral-1);
+}
+
+.text-neutral-2 {
+  color: var(--color-neutral-2);
+}
+
+.text-neutral-3 {
+  color: var(--color-neutral-3);
+}
+
+.text-neutral-4 {
+  color: var(--color-neutral-4);
+}
+
+.text-neutral-5 {
+  color: var(--color-neutral-5);
+}
+
+.text-neutral-6 {
+  color: var(--color-neutral-6);
+}
+
+.text-neutral-7 {
+  color: var(--color-neutral-7);
+}
+
+.text-neutral-8 {
+  color: var(--color-neutral-8);
+}
+
+.text-neutral-9 {
+  color: var(--color-neutral-9);
+}
+
+.text-neutral-10 {
+  color: var(--color-neutral-10);
+}
+
+/* Background and Text Colors used when IsLight parameter for Badge / Tag / UserInitials is True */
+.background-neutral-0-lightest,
+.background-neutral-1-lightest,
+.background-neutral-2-lightest,
+.background-neutral-3-lightest,
+.background-neutral-4-lightest {
+  background-color: var(--color-neutral-9);
+}
+
+.background-neutral-5-lightest,
+.background-neutral-6-lightest,
+.background-neutral-7-lightest,
+.background-neutral-8-lightest,
+.background-neutral-9-lightest,
+.background-neutral-10-lightest {
+  background-color: var(--color-neutral-0);
+}
+
+.text-neutral-5-darker {
+  color: var(--color-neutral-5);
+}
+
+.text-neutral-6-darker {
+  color: var(--color-neutral-6);
+}
+
+.text-neutral-7-darker {
+  color: var(--color-neutral-7);
+}
+
+.text-neutral-8-darker {
+  color: var(--color-neutral-8);
+}
+
+.text-neutral-9-darker {
+  color: var(--color-neutral-9);
+}
+
+.text-neutral-10-darker {
+  color: var(--color-neutral-10);
+}
+
+/* Background Transparent when used in IE11 to be more specific than CSSVars Polyfill */
+.ie11 .background-transparent {
+  background-color: transparent;
+}
+
+
+/* $6.2.4 - Styles - Colors - Semantic */
+.background-error-light {
+  background-color: var(--color-error-light);
+}
+
+.background-error {
+  background-color: var(--color-error);
+}
+
+.text-error-light {
+  color: var(--color-error-light);
+}
+
+.text-error {
+  color: var(--color-error);
+}
+
+.background-warning-light {
+  background-color: var(--color-warning-light);
+}
+
+.background-warning {
+  background-color: var(--color-warning);
+}
+
+.text-warning-light {
+  color: var(--color-warning-light);
+}
+
+.text-warning {
+  color: var(--color-warning);
+}
+
+.background-success-light {
+  background-color: var(--color-success-light);
+}
+
+.background-success {
+  background-color: var(--color-success);
+}
+
+.text-success-light {
+  color: var(--color-success-light);
+}
+
+.text-success {
+  color: var(--color-success);
+}
+
+.background-info-light {
+  background-color: var(--color-info-light);
+}
+
+.background-info {
+  background-color: var(--color-info);
+}
+
+.text-info-light {
+  color: var(--color-info-light);
+}
+
+.text-info {
+  color: var(--color-info);
+}
+
+/* ================================================================ */
+/*  $6.3 - Styles - Space                                           */
+/* ================================================================ */
+
+/* $6.3.1 - Styles - Space - Padding */
+.padding-none {
+  padding: var(--space-none);
+}
+
+.padding-xs {
+  padding: var(--space-xs);
+}
+
+.padding-s {
+  padding: var(--space-s);
+}
+
+.padding-base {
+  padding: var(--space-base);
+}
+
+.padding-m {
+  padding: var(--space-m);
+}
+
+.padding-l {
+  padding: var(--space-l);
+}
+
+.padding-xl {
+  padding: var(--space-xl);
+}
+
+.padding-xxl {
+  padding: var(--space-xxl);
+}
+
+
+/* $6.3.2 - Styles - Space - Padding Top */
+.padding-top-none {
+  padding-top: var(--space-none);
+}
+
+.padding-top-xs {
+  padding-top: var(--space-xs);
+}
+
+.padding-top-s {
+  padding-top: var(--space-s);
+}
+
+.padding-top-base {
+  padding-top: var(--space-base);
+}
+
+.padding-top-m {
+  padding-top: var(--space-m);
+}
+
+.padding-top-l {
+  padding-top: var(--space-l);
+}
+
+.padding-top-xl {
+  padding-top: var(--space-xl);
+}
+
+.padding-top-xxl {
+  padding-top: var(--space-xxl);
+}
+
+
+/* $6.3.3 - Styles - Space - Padding Right */
+.padding-right-none {
+  padding-right: var(--space-none);
+}
+
+.padding-right-xs {
+  padding-right: var(--space-xs);
+}
+
+.padding-right-s {
+  padding-right: var(--space-s);
+}
+
+.padding-right-base {
+  padding-right: var(--space-base);
+}
+
+.padding-right-m {
+  padding-right: var(--space-m);
+}
+
+.padding-right-l {
+  padding-right: var(--space-l);
+}
+
+.padding-right-xl {
+  padding-right: var(--space-xl);
+}
+
+.padding-right-xxl {
+  padding-right: var(--space-xxl);
+}
+
+
+/* $6.3.4 - Styles - Space - Padding Bottom */
+.padding-bottom-none {
+  padding-bottom: var(--space-none);
+}
+
+.padding-bottom-xs {
+  padding-bottom: var(--space-xs);
+}
+
+.padding-bottom-s {
+  padding-bottom: var(--space-s);
+}
+
+.padding-bottom-base {
+  padding-bottom: var(--space-base);
+}
+
+.padding-bottom-m {
+  padding-bottom: var(--space-m);
+}
+
+.padding-bottom-l {
+  padding-bottom: var(--space-l);
+}
+
+.padding-bottom-xl {
+  padding-bottom: var(--space-xl);
+}
+
+.padding-bottom-xxl {
+  padding-bottom: var(--space-xxl);
+}
+
+
+/* $6.3.5 - Styles - Space - Padding Left */
+.padding-left-none {
+  padding-left: var(--space-none);
+}
+
+.padding-left-xs {
+  padding-left: var(--space-xs);
+}
+
+.padding-left-s {
+  padding-left: var(--space-s);
+}
+
+.padding-left-base {
+  padding-left: var(--space-base);
+}
+
+.padding-left-m {
+  padding-left: var(--space-m);
+}
+
+.padding-left-l {
+  padding-left: var(--space-l);
+}
+
+.padding-left-xl {
+  padding-left: var(--space-xl);
+}
+
+.padding-left-xxl {
+  padding-left: var(--space-xxl);
+}
+
+
+/* $6.3.6 - Styles - Space - Padding Vertical */
+.padding-y-none {
+  padding-top: var(--space-none);
+  padding-bottom: var(--space-none);
+}
+
+.padding-y-xs {
+  padding-top: var(--space-xs);
+  padding-bottom: var(--space-xs);
+}
+
+.padding-y-s {
+  padding-top: var(--space-s);
+  padding-bottom: var(--space-s);
+}
+
+.padding-y-base {
+  padding-top: var(--space-base);
+  padding-bottom: var(--space-base);
+}
+
+.padding-y-m {
+  padding-top: var(--space-m);
+  padding-bottom: var(--space-m);
+}
+
+.padding-y-l {
+  padding-top: var(--space-l);
+  padding-bottom: var(--space-l);
+}
+
+.padding-y-xl {
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-xl);
+}
+
+.padding-y-xxl {
+  padding-top: var(--space-xxl);
+  padding-bottom: var(--space-xxl);
+}
+
+
+/* $6.3.7 - Styles - Space - Padding Horizontal */
+.padding-x-none {
+  padding-left: var(--space-none);
+  padding-right: var(--space-none);
+}
+
+.padding-x-xs {
+  padding-left: var(--space-xs);
+  padding-right: var(--space-xs);
+}
+
+.padding-x-s {
+  padding-left: var(--space-s);
+  padding-right: var(--space-s);
+}
+
+.padding-x-base {
+  padding-left: var(--space-base);
+  padding-right: var(--space-base);
+}
+
+.padding-x-m {
+  padding-left: var(--space-m);
+  padding-right: var(--space-m);
+}
+
+.padding-x-l {
+  padding-left: var(--space-l);
+  padding-right: var(--space-l);
+}
+
+.padding-x-xl {
+  padding-left: var(--space-xl);
+  padding-right: var(--space-xl);
+}
+
+.padding-x-xxl {
+  padding-left: var(--space-xxl);
+  padding-right: var(--space-xxl);
+}
+
+
+/* $6.3.8 - Styles - Space - Margin */
+.margin-none {
+  margin: var(--space-none);
+}
+
+.margin-xs {
+  margin: var(--space-xs);
+}
+
+.margin-s {
+  margin: var(--space-s);
+}
+
+.margin-base {
+  margin: var(--space-base);
+}
+
+.margin-m {
+  margin: var(--space-m);
+}
+
+.margin-l {
+  margin: var(--space-l);
+}
+
+.margin-xl {
+  margin: var(--space-xl);
+}
+
+.margin-xxl {
+  margin: var(--space-xxl);
+}
+
+.margin-auto {
+  margin: 0 auto;
+}
+
+
+/* $6.3.9 - Styles - Space - Margin Top */
+.margin-top-none {
+  margin-top: var(--space-none);
+}
+
+.margin-top-xs {
+  margin-top: var(--space-xs);
+}
+
+.margin-top-s {
+  margin-top: var(--space-s);
+}
+
+.margin-top-base {
+  margin-top: var(--space-base);
+}
+
+.margin-top-m {
+  margin-top: var(--space-m);
+}
+
+.margin-top-l {
+  margin-top: var(--space-l);
+}
+
+.margin-top-xl {
+  margin-top: var(--space-xl);
+}
+
+.margin-top-xxl {
+  margin-top: var(--space-xxl);
+}
+
+
+/* $6.3.10 - Styles - Space - Margin Right */
+.margin-right-none {
+  margin-right: var(--space-none);
+}
+
+.margin-right-xs {
+  margin-right: var(--space-xs);
+}
+
+.margin-right-s {
+  margin-right: var(--space-s);
+}
+
+.margin-right-base {
+  margin-right: var(--space-base);
+}
+
+.margin-right-m {
+  margin-right: var(--space-m);
+}
+
+.margin-right-l {
+  margin-right: var(--space-l);
+}
+
+.margin-right-xl {
+  margin-right: var(--space-xl);
+}
+
+.margin-right-xxl {
+  margin-right: var(--space-xxl);
+}
+
+
+/* $6.3.11 - Styles - Space - Margin Bottom */
+.margin-bottom-none {
+  margin-bottom: var(--space-none);
+}
+
+.margin-bottom-xs {
+  margin-bottom: var(--space-xs);
+}
+
+.margin-bottom-s {
+  margin-bottom: var(--space-s);
+}
+
+.margin-bottom-base {
+  margin-bottom: var(--space-base);
+}
+
+.margin-bottom-m {
+  margin-bottom: var(--space-m);
+}
+
+.margin-bottom-l {
+  margin-bottom: var(--space-l);
+}
+
+.margin-bottom-xl {
+  margin-bottom: var(--space-xl);
+}
+
+.margin-bottom-xxl {
+  margin-bottom: var(--space-xxl);
+}
+
+
+/* $6.3.12 - Styles - Space - Margin Left */
+.margin-left-none {
+  margin-left: var(--space-none);
+}
+
+.margin-left-xs {
+  margin-left: var(--space-xs);
+}
+
+.margin-left-s {
+  margin-left: var(--space-s);
+}
+
+.margin-left-base {
+  margin-left: var(--space-base);
+}
+
+.margin-left-m {
+  margin-left: var(--space-m);
+}
+
+.margin-left-l {
+  margin-left: var(--space-l);
+}
+
+.margin-left-xl {
+  margin-left: var(--space-xl);
+}
+
+.margin-left-xxl {
+  margin-left: var(--space-xxl);
+}
+
+
+/* $6.3.13 - Styles - Space - Margin Vertical */
+.margin-y-none {
+  margin-top: var(--space-none);
+  margin-bottom: var(--space-none);
+}
+
+.margin-y-xs {
+  margin-top: var(--space-xs);
+  margin-bottom: var(--space-xs);
+}
+
+.margin-y-s {
+  margin-top: var(--space-s);
+  margin-bottom: var(--space-s);
+}
+
+.margin-y-base {
+  margin-top: var(--space-base);
+  margin-bottom: var(--space-base);
+}
+
+.margin-y-m {
+  margin-top: var(--space-m);
+  margin-bottom: var(--space-m);
+}
+
+.margin-y-l {
+  margin-top: var(--space-l);
+  margin-bottom: var(--space-l);
+}
+
+.margin-y-xl {
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-xl);
+}
+
+.margin-y-xxl {
+  margin-top: var(--space-xxl);
+  margin-bottom: var(--space-xxl);
+}
+
+/* $6.3.14 - Styles - Space - Margin Horizontal */
+.margin-x-none {
+  margin-left: var(--space-none);
+  margin-right: var(--space-none);
+}
+
+.margin-x-xs {
+  margin-left: var(--space-xs);
+  margin-right: var(--space-xs);
+}
+
+.margin-x-s {
+  margin-left: var(--space-s);
+  margin-right: var(--space-s);
+}
+
+.margin-x-base {
+  margin-left: var(--space-base);
+  margin-right: var(--space-base);
+}
+
+.margin-x-m {
+  margin-left: var(--space-m);
+  margin-right: var(--space-m);
+}
+
+.margin-x-l {
+  margin-left: var(--space-l);
+  margin-right: var(--space-l);
+}
+
+.margin-x-xl {
+  margin-left: var(--space-xl);
+  margin-right: var(--space-xl);
+}
+
+.margin-x-xxl {
+  margin-left: var(--space-xxl);
+  margin-right: var(--space-xxl);
+}
+
+/* ================================================================ */
+/*  $6.4 - Styles - Border Radius                                   */
+/* ================================================================ */
+.border-radius-none {
+  border-radius: var(--border-radius-none);
+}
+
+.border-radius-soft {
+  border-radius: var(--border-radius-soft);
+}
+
+.border-radius-rounded {
+  border-radius: var(--border-radius-rounded);
+}
+
+.border-radius-circle {
+  border-radius: var(--border-radius-circle);
+}
+
+/* ================================================================ */
+/*  $6.5 - Styles - Border Size                                     */
+/* ================================================================ */
+.border-size-none {
+  border-width: var(--border-size-none);
+}
+
+.border-size-s {
+  border: var(--border-size-s) solid currentColor;
+}
+
+.border-size-m {
+  border: var(--border-size-m) solid currentColor;
+}
+
+.border-size-l {
+  border: var(--border-size-l) solid currentColor;
+}
+
+/* ================================================================ */
+/*  $6.6 - Styles - Elevation/Shadows                               */
+/* ================================================================ */
+.shadow-none {
+  box-shadow: var(--shadow-none);
+}
+
+.shadow-xs {
+  box-shadow: var(--shadow-xs);
+}
+
+.shadow-s {
+  box-shadow: var(--shadow-s);
+}
+
+.shadow-m {
+  box-shadow: var(--shadow-m);
+}
+
+.shadow-l {
+  box-shadow: var(--shadow-l);
+}
+
+.shadow-xl {
+  box-shadow: var(--shadow-xl);
+}
+
+/* ================================================================ */
+/*  $6.7 - Styles - Display Flex Properties                         */
+/* ================================================================ */
+.display-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.align-items-center {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.justify-content-flex-end {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.flex1 {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.flex2 {
+  -webkit-box-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+}
+
+.flex3 {
+  -webkit-box-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+}
+
+.flex-direction-column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.flex-direction-row {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.flex-direction-row-reverse {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+
+.top-left {
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.top-center {
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.top-right {
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.center-left {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.center {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.center-right {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.bottom-left {
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.bottom-center {
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.bottom-right {
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+
+/* ================================================================ */
+/*  $6.8 - Styles - Others                                          */
+/* ================================================================ */
+.display-block {
+  display: block;
+}
+
+.ph:empty {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.text-align-left {
+  text-align: left;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.text-align-right {
+  text-align: right;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+.img-cover {
+  object-fit: cover;
+  height: 100%;
+}
+
+[disabled="disabled"],
+[readonly="readonly"],
+textarea[readonly="readonly"] {
+  background-color: var(--color-neutral-2);
+  border: 1px solid var(--color-neutral-4);
+  color: var(--color-neutral-6);
+  pointer-events: none;
+}
+
+a:not(.Button)[disabled="disabled"] {
+  background-color: transparent;
+  border: none;
+}
+
+.hide-on-service-studio {
+  -servicestudio-display: none;
+}
+
+@font-face {
+  font-family: 'SilkWeb4';
+  src: url('SilkWeb4.eot');
+  src: url('SilkWeb4.eot#iefix') format('embedded-opentype'),
+    url('SilkWeb4.ttf') format('truetype'),
+    url('SilkWeb4.woff') format('woff'),
+    url('SilkWeb4.svg#SilkWeb4') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: 'SilkWeb4' !important;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  speak: none;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-silk-search:before {
+  content: "\f002";
+}
+
+.icon-silk-chevron-down:before {
+  content: "\f078";
+}
+
+.icon-silk-angle-down:before {
+  content: "\f107";
+}
+
+.icon-silk-rocket:before {
+  content: "\e900";
+}
+
+.highcharts-container,
+.highcharts-container>svg {
+  -servicestudio-width: 100% !important;
+}

@@ -1,0 +1,27 @@
+// Theme Colors
+$color-primary: #e8492e;
+$color-primary-light: lighten($color-primary, 15%);
+$color-primary-dark: darken($color-primary, 15%);
+
+$color-secondary: #c03d26;
+
+$dark-bg: $color-secondary;
+
+$font-family: "Barlow", sans-serif;
+
+// Menu
+$menu-color: $color-secondary;
+
+// Buttons
+
+$border-radius-brand: 1.5rem;
+
+// Label
+$label-color: $color-grey-dark;
+
+@import "all_root_theme_variables";
+:root .tempo-team,
+:root.tempo-team,
+:root.TempoTeam {
+  @include root-theme-vars;
+}

@@ -1,0 +1,85 @@
+/* $4.1.8 - Patterns - Content - CardSectioned */
+
+.card {
+  &-sectioned {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--space-none);
+
+    &.flex-direction-row {
+      .card-image {
+        padding: var(--space-m) var(--space-none) var(--space-m) var(--space-m);
+
+        &.padding-none {
+          padding: var(--space-none);
+        }
+      }
+
+      &.card-sectioned-right .card-image {
+        order: 2;
+        padding: var(--space-m) var(--space-m) var(--space-m) var(--space-none);
+
+        &.padding-none {
+          padding: var(--space-none);
+        }
+      }
+    }
+  }
+
+  &-image {
+    padding: var(--space-m) var(--space-m) var(--space-none);
+
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  &-title {
+    font-size: var(--font-size-h4);
+    font-weight: var(--font-semi-bold);
+    padding: var(--space-m) var(--space-m) var(--space-none) var(--space-m);
+  }
+
+  &-content {
+    flex: 1;
+    padding: var(--space-m);
+  }
+
+  &-footer {
+    padding: var(--space-none) var(--space-m) var(--space-m);
+  }
+
+  &-sectioned-top {
+    display: flex;
+    flex: 1;
+  }
+}
+
+.ie10,
+.ie11 {
+  .card-image {
+    height: auto;
+    width: 100%;
+  }
+
+  .card-content {
+    flex: none;
+  }
+
+  .card-sectioned-top.flex-direction-column {
+    flex: none;
+  }
+
+  .flex-direction-row .card-sectioned-top.flex-direction-column {
+    flex: 1;
+  }
+
+  .card-sectioned.flex-direction-row {
+    justify-content: flex-start;
+
+    .card-image {
+      width: auto;
+    }
+  }
+}

@@ -1,0 +1,106 @@
+/* $4.3.1 - Patterns - Layouts - Logins */
+.layout-login {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  position: relative;
+
+  >.columns {
+    width: 100%;
+
+    >.columns-item {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+
+      >.layout-login-background {
+        align-items: center;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+
+        * {
+          position: relative;
+          z-index: 2;
+        }
+      }
+
+      >img {
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+        -o-object-position: center;
+        object-position: center;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.layout-login-form {
+  display: flex;
+  flex-direction: column;
+  min-width: 435px;
+  position: relative;
+  z-index: 2;
+}
+
+.layout-login-simple {
+  .layout-login-background {
+    background-color: var(--color-primary);
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+
+    >img {
+      display: block;
+      height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  .layout-login-form-content {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+  }
+
+  .layout-login-form {
+    background-color: var(--color-neutral-0);
+    border-radius: var(--border-radius-soft);
+    box-shadow: var(--shadow-l);
+    padding: var(--space-xxl);
+  }
+}
+
+.phone {
+
+  .layout-login-simple .layout-login-form-content,
+  .layout-login>.columns>.columns-item {
+    align-items: flex-start;
+  }
+
+  .layout-login-form {
+    margin: var(--space-xl) var(--space-none) var(--space-none);
+    min-width: auto;
+    padding: var(--space-l);
+    width: 100%;
+  }
+
+  .layout-login-simple .layout-login-form {
+    margin: var(--space-xl) var(--space-base);
+  }
+
+}

@@ -1,0 +1,369 @@
+/* ===================================================================== */
+/*  $0 - Root - CSS Variables                                         */
+/* ===================================================================== */
+
+$color-primary: #146ef5;
+$color-secondary: #303d60;
+    
+$color-primary-hover: #295fd6;
+$color-primary-selected: rgba(20, 110, 245, .12);
+$color-primary-lightest: lighten($color-primary, 20%);
+
+$color-red: #c92a2a;
+$color-pink: #d6336c;
+$color-grape: #ae3ec9;
+$color-violet: #7048e8;
+$color-indigo: #4263eb;
+$color-blue: #1a79cb;
+$color-cyan: #0d8091;
+$color-teal: #087f5b;
+$color-green: #37b24d;
+$color-lime: #74b816;
+$color-orange: #f76707;
+$color-yellow: #f59f00;
+
+$color-red-lightest:lighten($color-red, 70%);
+$color-red-lighter: lighten($color-red, 50%);
+$color-red-light: lighten($color-red, 20%);
+$color-red: $color-red;
+$color-red-dark: darken($color-red, 20%);
+$color-red-darker: darken($color-red, 50%);
+$color-red-darkest: darken($color-red, 70%);
+
+$color-pink-lightest: lighten($color-pink, 30%);
+$color-pink-lighter: lighten($color-pink, 25%);
+$color-pink-light: lighten($color-pink, 20%);
+$color-pink: $color-pink;
+$color-pink-dark: darken($color-pink, 20%);
+$color-pink-darker: darken($color-pink, 25%);
+$color-pink-darkest: darken($color-pink, 30%);
+
+//fucked up 
+
+
+$color-grape-lightest: lighten($color-grape, 20%);
+$color-grape-lighter: lighten($color-grape, 50%);
+$color-grape-light: lighten($color-grape, 70%);
+$color-grape: $color-grape;
+$color-grape-dark: darken($color-grape, 20%);
+$color-grape-darker: darken($color-grape, 50%);
+$color-grape-darkest: darken($color-grape, 70%);
+
+$color-violet-lightest: lighten($color-violet, 20%);
+$color-violet-lighter: lighten($color-violet, 50%);
+$color-violet-light: lighten($color-violet, 70%);
+$color-violet:$color-violet;
+$color-violet-dark: darken($color-violet, 20%);
+$color-violet-darker: darken($color-violet, 50%);
+$color-violet-darkest: darken($color-violet, 70%);
+
+$color-indigo-lightest: lighten($color-indigo, 20%);
+$color-indigo-lighter:lighten($color-indigo, 50%);
+$color-indigo-light: lighten($color-indigo, 70%);
+$color-indigo: $color-indigo;
+$color-indigo-dark: darken($color-indigo, 20%);
+$color-indigo-darker:darken($color-indigo, 50%);
+$color-indigo-darkest: darken($color-indigo, 70%);
+
+$color-blue-lightest: lighten($color-blue, 20%);
+$color-blue-lighter: lighten($color-blue, 50%);
+$color-blue-light: lighten($color-blue, 70%);
+$color-blue: $color-blue;
+$color-blue-dark:darken($color-blue, 20%);
+$color-blue-darker: darken($color-blue, 50%);
+$color-blue-darkest: darken($color-blue, 70%);
+
+$color-cyan-lightest: lighten($color-cyan, 20%);
+$color-cyan-lighter: lighten($color-cyan, 50%);
+$color-cyan-light:  lighten($color-cyan, 70%);
+$color-cyan: $color-cyan;
+$color-cyan-dark: darken($color-cyan, 20%);
+$color-cyan-darker: darken($color-cyan, 50%);
+$color-cyan-darkest: darken($color-cyan, 70%);
+
+$color-teal-lightest: lighten($color-teal, 20%);
+$color-teal-lighter: lighten($color-teal, 50%);
+$color-teal-light: lighten($color-teal, 70%);
+$color-teal:$color-teal;
+$color-teal-dark: darken($color-teal, 20%);
+$color-teal-darker: darken($color-teal, 50%);
+$color-teal-darkest: darken($color-teal, 70%);
+
+$color-green-lightest: lighten($color-green, 20%);
+$color-green-lighter: lighten($color-green, 50%);
+$color-green-light: lighten($color-green, 70%);
+$color-green: $color-green;
+$color-green-dark: darken($color-green, 20%);
+$color-green-darker:  darken($color-green, 50%);
+$color-green-darkest:  darken($color-green, 70%);
+
+$color-lime-lightest: lighten($color-lime, 20%);
+$color-lime-lighter: lighten($color-lime, 50%);
+$color-lime-light: lighten($color-lime, 70%);
+$color-lime: $color-lime;
+$color-lime-dark: darken($color-lime, 20%);
+$color-lime-darker: darken($color-lime, 50%);
+$color-lime-darkest: darken($color-lime, 70%);
+
+$color-orange-lightest: lighten($color-orange, 20%);
+$color-orange-lighter: lighten($color-orange, 50%);
+$color-orange-light: lighten($color-orange, 70%);
+$color-orange: $color-orange;
+$color-orange-dark: darken($color-orange, 20%);
+$color-orange-darker: darken($color-orange, 50%);
+$color-orange-darkest: darken($color-orange, 70%);
+
+$color-yellow-lightest: lighten($color-yellow, 20%);
+$color-yellow-lighter: lighten($color-yellow, 50%);
+$color-yellow-light: lighten($color-yellow, 70%);
+$color-yellow: $color-yellow;
+$color-yellow-dark: darken($color-yellow, 20%);
+$color-yellow-darker: darken($color-yellow, 50%);
+$color-yellow-darkest:darken($color-yellow, 70%);
+
+$color-neutral-0: #ffffff;
+$color-neutral-1: #f8f9fa;
+$color-neutral-2: #f1f3f5;
+$color-neutral-3: #e9ecef;
+$color-neutral-4: #dee2e6;
+$color-neutral-5: #ced4da;
+$color-neutral-6: #adb5bd;
+$color-neutral-7: #868e96;
+$color-neutral-8: #5c656d;
+$color-neutral-9: #343a40;
+$color-neutral-10: #15181a;
+
+
+$color-error-light: #fceaea;
+$color-error: #e03131;
+
+$color-warning-light: #fdf6e5;
+$color-warning: #e9a100;
+
+$color-success-light: #eaf3eb;
+$color-success: #2a843c;
+
+$color-info-light: #e5f5fc;
+$color-info: #009dde;
+
+
+$space-none: 0;
+$space-xs: 4px;
+$space-s: 8px;
+$space-base: 16px;
+$space-m: 24px;
+$space-l: 32px;
+$space-xl: 40px;
+$space-xxl: 48px;
+
+
+$border-radius-none: 0;
+$border-radius-soft: 4px;
+$border-radius-rounded: 100px;
+$border-radius-circle: 100%;
+
+$border-size-none: 0;
+$border-size-s: 1px;
+$border-size-m: 2px;
+$border-size-l: 3px;
+
+$shadow-none: none;
+$shadow-xs: 0 1px 2px rgba(0, 0, 0, .1);
+$shadow-s: 0 2px 4px rgba(0, 0, 0, .1);
+$shadow-m: 0 4px 6px rgba(0, 0, 0, .1);
+$shadow-l: 0 6px 8px rgba(0, 0, 0, .1);
+$shadow-xl: 0 8px 10px rgba(0, 0, 0, .1);
+
+$color-background-body: #f3f6f8;
+$header-size: 56px;
+$side-menu-size: 300px;
+
+:root {
+
+    /* Typography - Size */
+    --font-size-display: 36px;
+    
+    --font-size-h1: 32px;
+    --font-size-h2: 28px;
+    --font-size-h3: 26px;
+    --font-size-h4: 22px;
+    --font-size-h5: 20px;
+    --font-size-h6: 18px;
+
+    --font-size-base: 16px;
+    --font-size-s: 14px;
+    --font-size-xs: 12px;   
+
+    /* Typography - Weight */
+    --font-light: 300;
+    --font-regular: 400;
+    --font-semi-bold: 600;
+    --font-bold: 700;
+    
+    /* Color - Brand */
+    --color-primary: #{$color-primary};
+    --color-secondary: #{$color-secondary};
+    
+    --color-primary-hover: #{$color-primary-hover};
+    --color-primary-selected: #{$color-primary-selected};
+    --color-primary-lightest: #{$color-primary-lightest};
+
+    /* Color - Extended */
+    --color-red-lightest:#{$color-red-lightest};
+    --color-red-lighter: #{$color-red-lighter};
+    --color-red-light: #{$color-red-light};
+    --color-red:#{$color-red};
+    --color-red-dark: #{$color-red-dark};
+    --color-red-darker: #{$color-red-darker};
+    --color-red-darkest: #{$color-red-darkest};
+    
+    --color-pink-lightest: #{$color-pink-lightest};
+    --color-pink-lighter: #{$color-pink-lighter};
+    --color-pink-light: #{$color-pink-light};
+    --color-pink: #{$color-pink};
+    --color-pink-dark: #{$color-pink-dark};
+    --color-pink-darker: #{$color-pink-darker};
+    --color-pink-darkest: #{$color-pink-darkest};
+    
+    --color-grape-lightest: #{$color-grape-lightest};
+    --color-grape-lighter: #{$color-grape-lighter};
+    --color-grape-light: #{$color-grape-light};
+    --color-grape: #{$color-grape};
+    --color-grape-dark: #{$color-grape-dark};
+    --color-grape-darker:#{$color-grape-darker};
+    --color-grape-darkest: #{$color-grape-darkest};
+    
+    --color-violet-lightest: #{$color-violet-lightest};
+    --color-violet-lighter: #{$color-violet-lighter};
+    --color-violet-light: #{$color-violet-light};
+    --color-violet:#{$color-violet};
+    --color-violet-dark: #{$color-violet-dark};
+    --color-violet-darker: #{$color-violet-darker};
+    --color-violet-darkest: #{$color-violet-darkest};
+   
+    --color-indigo-lightest: #{$color-indigo-lightest};
+    --color-indigo-lighter:#{$color-indigo-lighter};
+    --color-indigo-light: #{$color-indigo-light};
+    --color-indigo: #{$color-indigo};
+    --color-indigo-dark: #{$color-indigo-dark};
+    --color-indigo-darker:#{$color-indigo-darker};
+    --color-indigo-darkest: #{$color-indigo-darkest};
+    
+    --color-blue-lightest: #{$color-blue-lightest};
+    --color-blue-lighter: #{$color-blue-lighter};
+    --color-blue-light: #{$color-blue-light};
+    --color-blue: #{$color-blue};
+    --color-blue-dark:#{$color-blue-dark};
+    --color-blue-darker: #{$color-blue-darker};
+    --color-blue-darkest: #{$color-blue-darkest};
+    
+    --color-cyan-lightest: #{$color-cyan-lightest};
+    --color-cyan-lighter: #{$color-cyan-lighter};
+    --color-cyan-light:  #{$color-cyan-light};
+    --color-cyan: #{$color-cyan};
+    --color-cyan-dark: #{$color-cyan-dark};
+    --color-cyan-darker: #{$color-cyan-darker};
+    --color-cyan-darkest: #{$color-cyan-darkest};
+    
+    --color-teal-lightest: #{$color-teal-lightest};
+    --color-teal-lighter: #{$color-teal-lighter};
+    --color-teal-light: #{$color-teal-light};
+    --color-teal:#{$color-teal};
+    --color-teal-dark: #{$color-teal-dark};
+    --color-teal-darker:#{$color-teal-darker};
+    --color-teal-darkest: #{$color-teal-darkest};
+    
+    --color-green-lightest: #{$color-green-lightest};
+    --color-green-lighter: #{$color-green-lighter};
+    --color-green-light: #{$color-green-light};
+    --color-green: #{$color-green};
+    --color-green-dark: #{$color-green-dark};
+    --color-green-darker: #{$color-green-darker};
+    --color-green-darkest:  #{$color-green-darkest};
+    
+    --color-lime-lightest: #{$color-lime-lightest};
+    --color-lime-lighter: #{$color-lime-lighter};
+    --color-lime-light: #{$color-lime-light};
+    --color-lime: #{$color-lime};
+    --color-lime-dark: #{$color-lime-dark};
+    --color-lime-darker: #{$color-lime-darker};
+    --color-lime-darkest: #{$color-lime-darkest};
+    
+    --color-orange-lightest: #{$color-orange-lightest};
+    --color-orange-lighter:#{$color-orange-lighter};
+    --color-orange-light: #{$color-orange-light};
+    --color-orange:#{ $color-orange};
+    --color-orange-dark: #{$color-orange-dark};
+    --color-orange-darker:#{$color-orange-darker};
+    --color-orange-darkest: #{$color-orange-darkest};
+    
+    --color-yellow-lightest: #{$color-yellow-lightest};
+    --color-yellow-lighter: #{$color-yellow-lighter};
+    --color-yellow-light: #{$color-yellow-light};
+    --color-yellow: #{$color-yellow};
+    --color-yellow-dark: #{$color-yellow-dark};
+    --color-yellow-darker: #{$color-yellow-darker};
+    --color-yellow-darkest:#{$color-yellow-darkest};
+    
+    /* Color - Neutral */
+    --color-neutral-0: #{$color-neutral-0};
+    --color-neutral-1: #{$color-neutral-1};
+    --color-neutral-2: #{$color-neutral-2};
+    --color-neutral-3: #{$color-neutral-3};
+    --color-neutral-4: #{$color-neutral-4};
+    --color-neutral-5: #{$color-neutral-5};
+    --color-neutral-6: #{$color-neutral-6};
+    --color-neutral-7: #{$color-neutral-7};
+    --color-neutral-8: #{$color-neutral-8};
+    --color-neutral-9: #{$color-neutral-9};
+    --color-neutral-10: #{$color-neutral-10};
+    
+    /* Color - Semantic */
+    --color-error-light: #{$color-error-light};
+    --color-error: #{$color-error};
+    
+    --color-warning-light: #{$color-warning-light};
+    --color-warning: #{$color-warning};
+    
+    --color-success-light: #{$color-success-light};
+    --color-success: #{$color-success};
+    
+    --color-info-light: #{$color-info-light};
+    --color-info: #{$color-info};
+
+    /* Space - Sizes */
+    --space-none: #{$space-none};
+    --space-xs: #{$space-xs};
+    --space-s: #{$space-s};
+    --space-base: #{$space-base};
+    --space-m: #{$space-m};
+    --space-l: #{$space-l};
+    --space-xl: #{$space-xl};
+    --space-xxl:#{$space-xxl};
+    
+    /* Border Radius */
+    --border-radius-none: #{$border-radius-none};
+    --border-radius-soft: #{$border-radius-soft};
+    --border-radius-rounded: #{$border-radius-rounded};
+    --border-radius-circle: #{$border-radius-circle};
+    
+    /* Border Size */
+    --border-size-none: #{$border-size-none};
+    --border-size-s: #{$border-size-s};
+    --border-size-m: #{$border-size-m};
+    --border-size-l: #{$border-size-l};
+
+    /* Elevation / Shadow */
+    --shadow-none: #{$shadow-none};
+    --shadow-xs: #{$shadow-xs};
+    --shadow-s: #{$shadow-s};
+    --shadow-m: #{$shadow-m};
+    --shadow-l: #{$shadow-l};
+    --shadow-xl: #{$shadow-xl};
+
+    /* App Settings */
+    --color-background-body: #{$color-background-body};
+    --header-size: #{$header-size};
+    --side-menu-size: #{$side-menu-size};
+
+}

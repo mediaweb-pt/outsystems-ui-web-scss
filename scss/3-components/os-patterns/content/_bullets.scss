@@ -1,0 +1,12 @@
+/* $4.1.5 - Patterns - Content - Bullets */
+
+ol.bullets,
+ul.bullets {
+  margin-bottom: var(--space-none);
+  margin-top: var(--space-none);
+  padding-left: var(--space-m);
+
+  li:not(:last-child) {
+    margin-bottom: var(--space-s);
+  }
+}

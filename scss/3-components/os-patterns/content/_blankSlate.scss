@@ -1,0 +1,12 @@
+/* $4.1.4 - Patterns - Content - BlankSlate */
+
+.blank-slate {
+  display: flex;
+  position: relative;
+
+  &-content {
+    position: relative;
+    text-align: center;
+    z-index: 1;
+  }
+}

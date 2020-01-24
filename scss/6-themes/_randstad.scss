@@ -1,0 +1,25 @@
+// Theme Colors
+$color-primary: #2175d9;
+$color-primary-light: lighten($color-primary, 15%);
+$color-primary-dark: darken($color-primary, 15%);
+
+$color-secondary: #0f1941;
+
+$dark-bg: $color-primary;
+
+$font-family: "Graphik", sans-serif;
+
+// Menu
+$menu-color: $color-primary;
+
+// Buttons
+$border-radius-brand: 0.25rem;
+
+// Label
+$label-color: $color-secondary;
+
+@import "all_root_theme_variables";
+:root {
+  @include root-theme-vars;
+}
+

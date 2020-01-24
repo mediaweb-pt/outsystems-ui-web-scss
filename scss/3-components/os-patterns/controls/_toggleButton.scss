@@ -1,0 +1,61 @@
+/* $4.2.13 - Patterns - Controls - ToogleButton */
+.toggle-button {
+  background-color: var(--color-neutral-5);
+  border-radius: 50px;
+  border: var(--border-size-s) solid var(--color-neutral-5);
+  display: inline-block;
+  height: 32px;
+  position: relative;
+  transition: all 180ms linear;
+  width: 50px;
+
+  &:hover {
+    background-color: var(--color-neutral-6);
+    border: var(--border-size-s) solid var(--color-neutral-6);
+  }
+
+  &.toggle-button-checked {
+    background-color: var(--color-primary);
+    border: var(--border-size-s) solid var(--color-primary);
+
+    &:hover {
+      filter: brightness(.9);
+    }
+
+    &:after {
+      transform: translateX(21px) translateZ(0);
+    }
+  }
+
+  &.toggle-button-disabled {
+    background-color: var(--color-neutral-2);
+    border: var(--border-size-s) solid var(--color-neutral-4);
+    pointer-events: none;
+
+    &:after {
+      background-color: var(--color-neutral-5);
+    }
+  }
+
+  &:after {
+    background-color: var(--color-neutral-0);
+    border-radius: var(--border-radius-rounded);
+    border: var(--border-size-none);
+    content: '';
+    height: 24px;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 3px;
+    transform: translateX(3px) translateZ(0);
+    transition: all 180ms linear;
+    width: 24px;
+  }
+
+  .checkbox {
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+  }
+}

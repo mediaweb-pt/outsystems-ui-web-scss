@@ -1,0 +1,640 @@
+/* $4.1.3 - Patterns - Content - Balloon */
+.balloon {
+  -servicestudio-background-color: var(--color-neutral-0);
+  -servicestudio-margin-top: var(--space-s);
+  -servicestudio-border-radius: var(--border-radius-soft);
+  -servicestudio-border: var(--border-size-s) solid var(--color-neutral-4);
+
+  &-title {
+    border-bottom: var(--border-size-s) solid var(--color-neutral-4);
+    padding: var(--space-base);
+  }
+
+  &-content {
+    padding: var(--space-base);
+  }
+
+  &-footer {
+    border-top: var(--border-size-s) solid var(--color-neutral-4);
+    padding: var(--space-base);
+  }
+
+  /* Fix to hide content on start */
+  &-container {
+    display: none;
+  }
+}
+
+.only-balloon .tippy-popper {
+  max-width: 350px;
+}
+
+[data-balloon="balloon"] {
+  cursor: pointer;
+}
+
+span[data-balloon="balloon"] {
+  color: var(--color-primary);
+}
+
+.tippy-popper .balloon-container {
+  display: block;
+}
+
+/* Tippy */
+.tippy {
+  &-iOS {
+    cursor: pointer !important;
+  }
+
+  &-notransition {
+    transition: none !important;
+  }
+
+  &-popper {
+    pointer-events: none;
+    line-height: 1.4;
+    outline: 0;
+    transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+    z-index: 9999;
+
+    @media (max-width: 360px) {
+      max-width: 96%;
+      max-width: calc(100% - 20px);
+    }
+  }
+
+  &-active {
+    cursor: pointer;
+  }
+}
+
+/* arrow */
+.tippy-popper[x-placement^="top"] {
+  .tippy-arrow {
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid var(--color-neutral-9);
+    bottom: -8px;
+    transform-origin: 50% 0;
+  }
+
+  .tippy-roundarrow {
+    bottom: -8px;
+    transform-origin: 50% 0;
+
+    svg {
+      left: 0;
+      position: absolute;
+      transform: rotate(180deg);
+    }
+  }
+
+  .tippy-backdrop {
+    border-radius: 40% 40% 0 0;
+    transform-origin: 0 25%;
+
+    &[data-state="visible"] {
+      opacity: 1;
+      transform: scale(1) translate(-50%, -55%);
+    }
+
+    &[data-state="hidden"] {
+      opacity: 0;
+      transform: scale(0.2) translate(-50%, -45%);
+    }
+  }
+
+  [data-animation="shift-toward"] {
+    &[data-state="visible"] {
+      opacity: 1;
+      transform: translateY(-10px);
+    }
+
+    &[data-state="hidden"] {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+  }
+
+  [data-animation="perspective"] {
+    transform-origin: bottom;
+
+    &[data-state="visible"] {
+      opacity: 1;
+      transform: translateY(-10px) rotateX(0);
+    }
+
+    &[data-state="hidden"] {
+      opacity: 0;
+      transform: translateY(0) rotateX(60deg);
+    }
+  }
+
+  [data-animation="fade"] {
+    &[data-state="visible"] {
+      opacity: 1;
+      transform: translateY(-10px);
+    }
+
+    &[data-state="hidden"] {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+  }
+
+  [data-animation="shift-away"] {
+    &[data-state="visible"] {
+      opacity: 1;
+      transform: translateY(-10px);
+    }
+
+    &[data-state="hidden"] {
+      opacity: 0;
+      transform: translateY(0);
+    }
+  }
+
+  [data-animation="scale"] {
+    &[data-state="visible"] {
+      opacity: 1;
+      transform: translateY(-10px) scale(1);
+    }
+
+    &[data-state="hidden"] {
+      opacity: 0;
+      transform: translateY(0) scale(0.5);
+    }
+  }
+
+  .tippy-tooltip.light-theme .tippy-arrow {
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid var(--color-neutral-4);
+
+    &:before {
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-top: 8px solid var(--color-neutral-0);
+      margin-left: -8px;
+      top: -9px;
+    }
+  }
+}
+
+.tippy-popper[x-placement^="bottom"] {
+  .tippy-backdrop {
+    border-radius: 0 0 30% 30%;
+    transform-origin: 0 -50%;
+
+    &[data-state="visible"] {
+      opacity: 1;
+      transform: scale(1) translate(-50%, -45%);
+    }
+
+    &[data-state="hidden"] {
+      opacity: 0;
+      transform: scale(0.2) translate(-50%);
+    }
+  }
+
+  .tippy-roundarrow {
+    transform-origin: 50% 100%;
+    top: -8px;
+
+    svg {
+      left: 0;
+      position: absolute;
+      transform: rotate(0);
+    }
+  }
+
+  .tippy-arrow {
+    border-bottom: 8px solid var(--color-neutral-9);
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+    top: -8px;
+    transform-origin: 50% 100%;
+  }
+
+  [data-animation="shift-toward"] {
+    &[data-state="visible"] {
+      opacity: 1;
+      transform: translateY(10px);
+    }
+
+    &[data-state="hidden"] {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+  }
+
+  [data-animation="perspective"] {
+    transform-origin: top;
+
+    &[data-state="visible"] {
+      opacity: 1;
+      transform: translateY(10px) rotateX(0);
+    }
+
+    &[data-state="hidden"] {
+      opacity: 0;
+      transform: translateY(0) rotateX(-60deg);
+    }
+  }
+
+  [data-animation="fade"] {
+    &[data-state="visible"] {
+      opacity: 1;
+      transform: translateY(10px);
+    }
+
+    &[data-state="hidden"] {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+  }
+
+  [data-animation="shift-away"] {
+    &[data-state="visible"] {
+      opacity: 1;
+      transform: translateY(10px);
+    }
+
+    &[data-state="hidden"] {
+      opacity: 0;
+      transform: translateY(0);
+    }
+  }
+
+  [data-animation="scale"] {
+    &[data-state="visible"] {
+      opacity: 1;
+      transform: translateY(10px) scale(1);
+    }
+
+    &[data-state="hidden"] {
+      opacity: 0;
+      transform: translateY(0) scale(0.5);
+    }
+  }
+
+  .tippy-tooltip.light-theme .tippy-arrow {
+    border-bottom: 8px solid var(--color-neutral-4);
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+
+    &:before {
+      border-bottom: 8px solid var(--color-neutral-0);
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      margin-left: -8px;
+      top: 1px;
+    }
+  }
+}
+
+.tippy-popper[x-placement^="left"] {
+  .tippy-backdrop {
+    border-radius: 50% 0 0 50%;
+  }
+
+  .tippy-roundarrow {
+    right: -16px;
+    transform-origin: 33.33333333% 50%;
+
+    svg {
+      left: 0;
+      position: absolute;
+      transform: rotate(90deg);
+    }
+  }
+
+  .tippy-arrow {
+    border-left: 8px solid var(--color-neutral-9);
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    right: -8px;
+    transform-origin: 0 50%;
+  }
+
+  .tippy-backdrop {
+    transform-origin: 50% 0;
+
+    &[data-state="visible"] {
+      opacity: 1;
+      transform: scale(1) translate(-50%, -50%);
+    }
+
+    &[data-state="hidden"] {
+      opacity: 0;
+      transform: scale(0.2) translate(-75%, -50%);
+    }
+  }
+
+  [data-animation="shift-toward"] {
+    &[data-state="visible"] {
+      opacity: 1;
+      transform: translateX(-10px);
+    }
+
+    &[data-state="hidden"] {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+  }
+
+  [data-animation="perspective"] {
+    transform-origin: right;
+
+    &[data-state="visible"] {
+      opacity: 1;
+      transform: translateX(-10px) rotateY(0);
+    }
+
+    &[data-state="hidden"] {
+      opacity: 0;
+      transform: translateX(0) rotateY(-60deg);
+    }
+  }
+
+  [data-animation="fade"] {
+    &[data-state="visible"] {
+      opacity: 1;
+      transform: translateX(-10px);
+    }
+
+    &[data-state="hidden"] {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+  }
+
+  [data-animation="shift-away"] {
+    &[data-state="visible"] {
+      opacity: 1;
+      transform: translateX(-10px);
+    }
+
+    &[data-state="hidden"] {
+      opacity: 0;
+      transform: translateX(0);
+    }
+  }
+
+  [data-animation="scale"] {
+    &[data-state="visible"] {
+      opacity: 1;
+      transform: translateX(-10px) scale(1);
+    }
+
+    &[data-state="hidden"] {
+      opacity: 0;
+      transform: translateX(0) scale(0.5);
+    }
+  }
+
+  .tippy-tooltip.light-theme .tippy-arrow {
+    border-bottom: 8px solid transparent;
+    border-left: 8px solid var(--color-neutral-4);
+    border-top: 8px solid transparent;
+
+    &:before {
+      border-bottom: 8px solid transparent;
+      border-left: 8px solid var(--color-neutral-0);
+      border-top: 8px solid transparent;
+      margin-top: -8px;
+      right: 1px;
+    }
+  }
+}
+
+.tippy-popper[x-placement^="right"] {
+  .tippy-backdrop {
+    border-radius: 0 50% 50% 0;
+  }
+
+  .tippy-roundarrow {
+    left: -16px;
+    transform-origin: 66.66666666% 50%;
+
+    svg {
+      left: 0;
+      position: absolute;
+      transform: rotate(-90deg);
+    }
+  }
+
+  .tippy-arrow {
+    border-right: 8px solid var(--color-neutral-9);
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    left: -7px;
+    transform-origin: 100% 50%;
+  }
+
+  .tippy-backdrop {
+    transform-origin: -50% 0;
+
+    &[data-state="visible"] {
+      opacity: 1;
+      transform: scale(1) translate(-50%, -50%);
+    }
+
+    &[data-state="hidden"] {
+      opacity: 0;
+      transform: scale(0.2) translate(-25%, -50%);
+    }
+  }
+
+  [data-animation="shift-toward"] {
+    &[data-state="visible"] {
+      opacity: 1;
+      transform: translateX(10px);
+    }
+
+    &[data-state="hidden"] {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+  }
+
+  [data-animation="perspective"] {
+    transform-origin: left;
+
+    &[data-state="visible"] {
+      opacity: 1;
+      transform: translateX(10px) rotateY(0);
+    }
+
+    &[data-state="hidden"] {
+      opacity: 0;
+      transform: translateX(0) rotateY(60deg);
+    }
+  }
+
+  [data-animation="fade"] {
+    &[data-state="visible"] {
+      opacity: 1;
+      transform: translateX(10px);
+    }
+
+    &[data-state="hidden"] {
+      opacity: 0;
+      transform: translateX(10px);
+    }
+  }
+
+  [data-animation="shift-away"] {
+    &[data-state="visible"] {
+      opacity: 1;
+      transform: translateX(10px);
+    }
+
+    &[data-state="hidden"] {
+      opacity: 0;
+      transform: translateX(0);
+    }
+  }
+
+  [data-animation="scale"] {
+    &[data-state="visible"] {
+      opacity: 1;
+      transform: translateX(10px) scale(1);
+    }
+
+    &[data-state="hidden"] {
+      opacity: 0;
+      transform: translateX(0) scale(0.5);
+    }
+  }
+
+  .tippy-tooltip.light-theme .tippy-arrow {
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid var(--color-neutral-4);
+    border-top: 8px solid transparent;
+
+    &:before {
+      margin-top: -8px;
+      border-bottom: 8px solid transparent;
+      border-right: 8px solid var(--color-neutral-0);
+      border-top: 8px solid transparent;
+    }
+  }
+}
+
+.tippy-tooltip {
+  background-color: #333;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 0.9rem;
+  position: relative;
+  will-change: transform;
+
+  &[data-size="small"] {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.4rem;
+  }
+
+  &[data-size="large"] {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  &[data-animatefill] {
+    background-color: transparent;
+    overflow: hidden;
+  }
+
+  &[data-interactive],
+  &[data-interactive] path {
+    pointer-events: auto;
+  }
+
+  &[data-inertia] {
+    &[data-state="visible"] {
+      transition-timing-function: cubic-bezier(0.53, 2, 0.36, 0.85);
+    }
+
+    &[data-state="hidden"] {
+      transition-timing-function: ease;
+    }
+  }
+}
+
+.tippy {
+
+  &-arrow,
+  &-roundarrow {
+    height: 0;
+    position: absolute;
+    width: 0;
+  }
+
+  &-roundarrow {
+    fill: #333;
+    height: 8px;
+    pointer-events: none;
+    width: 24px;
+  }
+
+  &-backdrop {
+    backface-visibility: hidden;
+    background-color: #333;
+    border-radius: 50%;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transition: all cubic-bezier(0.46, 0.1, 0.52, 0.98);
+    width: calc(110% + 2rem);
+    will-change: transform;
+    z-index: -1;
+
+    &:after {
+      content: "";
+      float: left;
+      padding-top: 100%;
+    }
+
+    +.tippy-content {
+      transition-property: opacity;
+
+      &[data-state="visible"] {
+        opacity: 1;
+      }
+
+      &[data-state="hidden"] {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+/* Arrow Fix for border */
+.tippy-popper[x-placement^="bottom"],
+.tippy-popper[x-placement^="top"],
+.tippy-popper[x-placement^="left"],
+.tippy-popper[x-placement^="right"] {
+  .tippy-arrow:before {
+    content: " ";
+    pointer-events: none;
+    position: absolute;
+  }
+}
+
+/* Light Theme */
+.tippy-tooltip.light-theme {
+  background-color: var(--color-neutral-0);
+  border-radius: var(--border-radius-soft);
+  border: var(--border-size-s) solid var(--color-neutral-4);
+  box-shadow: var(--shadow-s);
+  color: var(--color-neutral-9);
+
+  .tippy-backdrop {
+    background-color: #fff;
+  }
+
+  .tippy-roundarrow {
+    fill: #fff;
+  }
+}

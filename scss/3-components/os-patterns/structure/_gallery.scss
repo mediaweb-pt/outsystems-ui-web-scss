@@ -1,0 +1,18 @@
+/* $4.7.3 - Patterns - Structure - Gallery */
+.gallery-content{
+  &,
+  &.ListRecords {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &.is--hidden {
+    opacity: 0;  
+
+    .gallery-item {
+      transition: none;
+    }
+  }
+  &.is--visible {
+    opacity: 1;
+  }
+}

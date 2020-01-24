@@ -1,0 +1,68 @@
+/* $4.1.10 - Patterns - Content - ChatMessage */
+
+.chat {
+  display: flex;
+  width: 100%;
+
+  +.chat {
+    margin-top: var(--space-base);
+  }
+
+  .chat-message-content {
+    border-radius: var(--border-radius-soft);
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    padding: var(--space-base);
+    position: relative;
+    word-break: break-word;
+  }
+
+  &.is-right {
+    flex-direction: row-reverse;
+
+    .chat-photo {
+      margin-left: var(--space-base);
+      margin-right: var(--space-none);
+    }
+
+    .chat-message-content {
+      justify-content: flex-end;
+    }
+  }
+
+  &.is-inline {
+    .chat-message-content {
+      background-color: transparent;
+      cursor: initial;
+      padding: 0;
+    }
+  }
+
+  &-photo {
+    margin-right: var(--space-base);
+  }
+
+  &-message-name {
+    margin-bottom: var(--space-s);
+  }
+
+  &-message-actions {
+    align-items: center;
+    display: flex;
+    font-size: var(--font-size-xs);
+    margin-top: var(--space-xs);
+
+    &.is--hidden {
+      display: none;
+    }
+  }
+
+  .phone &-message {
+    flex: 1;
+
+    &-content {
+      width: 100%;
+    }
+  }
+}

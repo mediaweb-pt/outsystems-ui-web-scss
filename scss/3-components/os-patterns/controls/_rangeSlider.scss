@@ -1,0 +1,209 @@
+/* $4.2.9 - Patterns - Controls - RangeSlider */
+.range-slider {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--space-l);
+
+  .noUi-connect {
+    background: var(--color-primary);
+  }
+
+  .noUi-target {
+    background: var(--color-neutral-5);
+    border-radius: var(--border-radius-soft);
+    border: none;
+  }
+
+  .noUi-handle {
+    background: var(--color-neutral-0);
+    border-radius: 50%;
+    border: var(--border-size-s) solid var(--color-neutral-7);
+    box-shadow: var(--shadow-xs);
+    cursor: pointer;
+    height: 24px;
+    margin-top: -10px;
+    width: 24px;
+
+    &.noUi-active,
+    &:hover {
+      border: var(--border-size-s) solid var(--color-primary);
+    }
+
+    &:before,
+    &:after {
+      background: transparent;
+      border-color: var(--color-neutral-7);
+      border-style: solid;
+      content: '';
+      height: 10px;
+      margin-top: -5px;
+      position: absolute;
+      top: 50%;
+    }
+
+    &:before {
+      border-width: var(--border-size-none) var(--border-size-none) var(--border-size-none) var(--border-size-s);
+      content: '';
+      left: 6px;
+    }
+
+    &:after {
+      border-style: solid;
+      border-width: var(--border-size-none) var(--border-size-s);
+      left: 10px;
+      width: 3px;
+    }
+
+    &.noUi-active:before,
+    &.noUi-active:after,
+    &:hover:before,
+    &:hover:after {
+      border-color: var(--color-primary);
+    }
+  }
+
+  .noUi-connects {
+    border-radius: var(--border-radius-soft);
+  }
+
+  .noUi-pips {
+    color: var(--color-neutral-8);
+  }
+
+  .noUi-marker {
+    background: var(--color-neutral-5);
+  }
+
+  .range-slider-separator.is--hidden {
+    display: none;
+  }
+
+  .range-slider-values>* {
+    word-break: normal;
+  }
+
+  /* Horizontal */
+  .noUi-horizontal {
+    height: 4px;
+    margin: var(--space-base) var(--space-none) var(--space-base);
+    width: 100%;
+  }
+
+  .noUi-marker-horizontal {
+    height: 4px;
+  }
+
+  .noUi-pips-horizontal {
+    padding: var(--space-s) var(--space-none) var(--space-none) var(--space-none);
+    height: 30px;
+  }
+
+  .noUi-value-horizontal {
+    transform: translate(-50%, 20%);
+  }
+
+  /* Vertical */
+  &.vertical .range-slider-object {
+    height: 100%;
+    margin-top: var(--space-m);
+  }
+
+  .noUi-vertical {
+    height: 100px;
+    margin-top: var(--space-base);
+    width: 6px;
+
+    .noUi-handle {
+      left: -10px;
+      top: -4px;
+    }
+  }
+
+  .noUi-pips-vertical {
+    padding: var(--space-none) var(--space-none) var(--space-none) 12px;
+  }
+
+  .noUi-value-vertical {
+    padding-left: var(--space-s);
+  }
+
+  /* RangeSlider Service Studio Styles */
+  -servicestudio-position: relative;
+
+  .range-slider-object {
+    -servicestudio-background-color: var(--color-neutral-5);
+    -servicestudio-height: 4px;
+    -servicestudio-margin-top: 16px;
+    -servicestudio-position: relative;
+    -servicestudio-border-radius: var(--border-radius-soft);
+
+    &:after {
+      -servicestudio-content: '';
+      -servicestudio-position: absolute;
+      -servicestudio-background-color: var(--color-primary);
+      -servicestudio-height: 100%;
+      -servicestudio-left: 0;
+      -servicestudio-width: 50%;
+      -servicestudio-border-radius: var(--border-radius-soft);
+    }
+  }
+
+  &.interval .range-slider-object:after {
+    -servicestudio-left: 10%;
+  }
+
+  &:before,
+  &:after {
+    -servicestudio-content: '\007C\007C\007C';
+    -servicestudio-width: 24px;
+    -servicestudio-height: 24px;
+    -servicestudio-background-color: var(--color-neutral-0);
+    -servicestudio-border-radius: 100%;
+    -servicestudio-box-shadow: var(--shadow-xs);
+    -servicestudio-text-align: center;
+    -servicestudio-color: var(--color-neutral-7);
+    -servicestudio-position: absolute;
+    -servicestudio-top: 26px;
+    -servicestudio-z-index: 2;
+    -servicestudio-left: 50%
+  }
+
+  &.interval:before {
+    -servicestudio-left: 10%;
+  }
+
+  &.interval:after {
+    -servicestudio-left: 60%;
+  }
+}
+
+.range-slider-values {
+  align-items: center;
+  display: flex;
+
+  .input {
+    background: transparent;
+    border: none;
+    height: auto;
+    margin-left: var(--space-none);
+    padding: var(--space-none);
+  }
+}
+
+.range-slider-label {
+  color: var(--color-neutral-8);
+  margin-left: var(--space-s);
+}
+
+.range-slider-separator {
+  background-color: var(--color-neutral-4);
+  font-size: 0;
+  height: 2px;
+  margin: var(--space-none) var(--space-s);
+  width: 16px;
+}
+
+/* Horizontal */
+html:not([dir="rtl"]) .range-slider .noUi-horizontal .noUi-handle {
+  right: -12px;
+}

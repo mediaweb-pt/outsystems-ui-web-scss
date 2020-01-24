@@ -1,0 +1,59 @@
+/* $4.8.3 - Patterns - Utilities - FlipContent */
+.flip-content {
+  perspective: 1000px;
+  position: relative;
+  transform-style: preserve-3d;
+  will-change: transform;
+
+  &.is--click {
+    cursor: pointer;
+  }
+
+  .flip-content-front,
+  .flip-content-back {
+    backface-visibility: hidden;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: transform 600ms ease-out;
+    width: 100%;
+  }
+
+  .flip-content-front {
+    position: relative;
+  }
+
+  .flip-content-back { 
+    transform:  rotateY(-180deg) translateZ(0);   
+  }
+}
+
+.flip-content.is--hover:hover .flip-content-front,
+.flip-content.is--flipped .flip-content-front {
+  transform: rotateY(180deg) translateZ(0);   
+}
+
+.flip-content.is--hover:hover .flip-content-back,
+.flip-content.is--flipped .flip-content-back{
+  transform: rotateY(0deg) translateZ(0);   
+}
+
+.ie11{
+  .flip-content{
+    .flip-content-front,
+    .flip-content-back {
+      backface-visibility: inherit;
+      transition: all 600ms ease-out;
+    }
+    .flip-content-back {
+      opacity: 0;
+    }
+
+    &.is--hover:hover .flip-content-back,
+    &.is--flipped .flip-content-back {
+      opacity: 1;
+    }
+  }
+}
+

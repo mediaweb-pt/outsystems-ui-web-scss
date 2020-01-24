@@ -1,0 +1,149 @@
+/* $4.2.2 - Patterns - Controls - ButtonGroup */
+.button-group {
+  display: inline-flex;
+
+  &.justified {
+
+    &,
+    .ListRecords {
+      width: 100%
+    }
+  }
+
+  .ListRecords {
+    display: flex;
+  }
+
+  label {
+    flex: 1;
+    position: relative;
+    word-break: normal;
+
+    >label {
+      /* Enable a label to be used inside button group */
+      pointer-events: none;
+    }
+
+    &:first-child .btn {
+      border-radius: var(--border-radius-soft) var(--border-radius-none) var(--border-radius-none) var(--border-radius-soft);
+    }
+
+    &:last-child .btn {
+      border-radius: var(--border-radius-none) var(--border-radius-soft) var(--border-radius-soft) var(--border-radius-none);
+    }
+
+    .btn {
+      text-align: center;
+    }
+
+    &:not(:first-child) .btn {
+      border-left: var(--border-size-none);
+    }
+  }
+
+  .btn {
+    border-radius: var(--border-radius-none);
+    border: var(--border-size-s) solid var(--color-primary);
+    color: var(--color-primary);
+    display: inline-flex;
+    white-space: nowrap;
+    width: 100%;
+    -servicestudio-padding-top: 10px;
+  }
+
+  input[type="radio"] {
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    -servicestudio-left: 50%;
+    -servicestudio-opacity: 1;
+    -servicestudio-height: 10px;
+    -servicestudio-top: 4px;
+    -servicestudio-transform: translate(-50%, 0%);
+    -servicestudio-width: 10px;
+
+    &:checked+.btn {
+      background-color: var(--color-primary);
+      color: var(--color-neutral-0);
+    }
+  }
+
+  /* ButtonGroup Service Studio Styles */
+  >div,
+  .ListRecords>div {
+    -servicestudio-position: relative;
+    -servicestudio-width: 100%;
+  }
+
+  >div:first-child .btn {
+    -servicestudio-border-radius: var(--border-radius-soft) var(--border-radius-none) var(--border-radius-none) var(--border-radius-soft);
+  }
+
+  >div:last-child .btn {
+    -servicestudio-border-radius: var(--border-radius-none) var(--border-radius-soft) var(--border-radius-soft) var(--border-radius-none);
+  }
+
+  >div:not(:first-child) .btn {
+    -servicestudio-border-left: var(--border-size-none);
+  }
+
+  .radio-button:before {
+    -servicestudio-width: 9px;
+    -servicestudio-height: 9px;
+  }
+
+  .Form & .btn {
+    display: inline-flex;
+  }
+}
+
+.phone {
+  .button-group {
+    label {
+      flex: none;
+      width: 100%;
+
+      .btn:not(:first-child) {
+        border-left: 1px solid var(--color-primary);
+      }
+
+      &:not(:first-of-type) .btn {
+        border-top: none;
+      }
+
+      &:first-child .btn {
+        border-radius: var(--space-none);
+        border-top-left-radius: var(--border-radius-soft);
+        border-top-right-radius: var(--border-radius-soft);
+      }
+
+      &:last-child .btn {
+        border-radius: var(--space-none);
+        border-bottom-left-radius: var(--border-radius-soft);
+        border-bottom-right-radius: var(--border-radius-soft);
+      }
+    }
+
+    &,
+    .ListRecords {
+      flex-wrap: wrap;
+      width: 100%;
+    }
+  }
+}
+
+.ie10 :not(.justified).button-group label {
+  display: table-cell;
+}
+
+.ie10 .button-group:not(.justified) label,
+.ie11 .button-group:not(.justified) label {
+  flex: none;
+}
+
+.Form.form-top .button-group label {
+  padding-bottom: 0;
+}

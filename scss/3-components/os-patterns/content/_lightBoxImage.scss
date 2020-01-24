@@ -1,0 +1,749 @@
+/* $4.1.11 - Patterns - Content - LightBoxImage */
+
+.lightbox figure {
+  margin: 0;
+  padding: 0;
+}
+
+.lightbox-content-thumbnail {
+  width: 100%;
+}
+
+/*! PhotoSwipe main CSS by Dmitry Semenov | photoswipe.com | MIT license */
+/*
+    Styles for basic PhotoSwipe functionality (sliding area, open/close transitions)
+*/
+/* pswp = photoswipe */
+
+.pswp {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  touch-action: none;
+  z-index: 1500;
+  /* create separate layer, to avoid paint on window.onscroll in webkit/blink */
+  outline: none;
+  z-index: 500;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  img {
+    max-width: none;
+  }
+
+  /* style is added when JS option showHideOpacity is set to true */
+  &--animate_opacity {
+    /* 0.001, because opacity:0 doesn't trigger Paint action, which causes lag at start of transition */
+    opacity: 0.001;
+    will-change: opacity;
+    /* for open/close transition */
+    transition: opacity 333ms cubic-bezier(0.4, 0, 0.22, 1);
+  }
+
+  &--open {
+    display: block;
+  }
+
+  &--zoom-allowed {
+    .pswp__img {
+      /* autoprefixer: off */
+      cursor: zoom-in;
+    }
+  }
+
+  &--zoomed-in .pswp__img {
+    /* autoprefixer: off */
+    cursor: grab;
+  }
+
+  &--dragging .pswp__img {
+    /* autoprefixer: off */
+    cursor: grabbing;
+  }
+
+  &--animated-in {
+
+    .pswp__bg,
+    .pswp__zoom-wrap {
+      transition: none;
+    }
+  }
+
+  &--supports-fs .pswp__button--fs {
+    display: block;
+  }
+
+  &--fs .pswp__button--fs {
+    background-position: -44px 0;
+  }
+
+  &--zoom-allowed .pswp__button--zoom {
+    display: block;
+  }
+
+  &--zoomed-in .pswp__button--zoom {
+    background-position: -132px 0;
+  }
+
+  &--touch {
+
+    /* no arrows on touch screens */
+    .pswp__button--arrow--left,
+    .pswp__button--arrow--right {
+      visibility: hidden;
+    }
+  }
+}
+
+/*
+  Background is added as a separate element.
+  As animating opacity is much faster than animating rgba() background-color.
+*/
+.pswp {
+  &__bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0;
+    will-change: opacity;
+    /* for open/close transition */
+    transition: opacity 333ms cubic-bezier(0.4, 0, 0.22, 1);
+  }
+
+  &__scroll-wrap {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  &__container,
+  &__zoom-wrap {
+    -ms-touch-action: none;
+    touch-action: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    will-change: transform;
+  }
+
+  &__container,
+  &__img {
+    user-select: none;
+  }
+
+  &__zoom-wrap {
+    position: absolute;
+    width: 100%;
+    transform-origin: left top;
+    /* for open/close transition */
+    transition: transform 333ms cubic-bezier(0.4, 0, 0.22, 1);
+    transition: transform 333ms cubic-bezier(0.4, 0, 0.22, 1);
+  }
+
+  &__img {
+    .pswp--ie & {
+      width: 100% !important;
+      height: auto !important;
+      left: 0;
+      top: 0;
+    }
+  }
+
+  &__error-msg {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    line-height: 16px;
+    margin-top: -8px;
+    color: #CCC;
+
+    a {
+      color: #CCC;
+      text-decoration: underline;
+    }
+  }
+
+  &__item {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+  }
+
+  &__img {
+    position: absolute;
+    width: auto;
+    height: auto;
+    top: 0;
+    left: 0;
+
+    /*
+      stretched thumbnail or div placeholder element (see below)
+      style is added to avoid flickering in webkit/blink when layers overlap
+    */
+    &--placeholder {
+
+      /*
+      div element that matches size of large image
+      large image loads on top of it
+      */
+      &--blank {
+        /*background: #222;*/
+      }
+    }
+  }
+
+  /*
+      Error message appears when image is not loaded
+      (JS option errorMsg controls markup)
+  */
+
+  /*! PhotoSwipe Default UI CSS by Dmitry Semenov | photoswipe.com | MIT license */
+  /*
+  
+      Contents:
+  
+      1. Buttons
+      2. Share modal and links
+      3. Index indicator ("1 of X" counter)
+      4. Caption
+      5. Loading indicator
+      6. Additional styles (root element, top bar, idle state, hidden state, etc.)
+  
+  */
+  /*
+      
+      1. Buttons
+  
+   */
+  /* <button> css reset */
+  &__button {
+    width: 44px;
+    height: 44px;
+    position: relative;
+    background: none;
+    cursor: pointer;
+    overflow: visible;
+    display: block;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    float: right;
+    opacity: 0.75;
+    transition: opacity 0.2s;
+    box-shadow: none;
+    background: url(/WebPatterns/img/PhotoswipeSkin.png?18249&18249&18397) 0 0 no-repeat;
+    background-size: 264px 88px;
+
+    &:focus,
+    &:hover {
+      opacity: 1;
+    }
+
+    &:active {
+      outline: none;
+      opacity: 0.9;
+    }
+
+    &::-moz-focus-inner {
+      padding: 0;
+      border: 0;
+    }
+
+    &--close {
+      background-position: 0 -44px;
+    }
+
+    &--share {
+      background-position: -44px -44px;
+    }
+
+    &--fs {
+      display: none;
+    }
+
+    &--zoom {
+      display: none;
+      background-position: -88px 0;
+    }
+
+    /*
+      Arrow buttons hit area
+      (icon is added to :before pseudo-element)
+    */
+    &--arrow--left,
+    &--arrow--right {
+      top: 50%;
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background: var(--color-neutral-9);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--color-neutral-5);
+      box-shadow: var(--shadow-xs);
+
+      &:hover {
+        color: var(--color-neutral-7);
+      }
+
+      .fa-fw {
+        font-size: 24px;
+        pointer-events: none;
+      }
+    }
+
+    &--arrow--left {
+      left: 24px;
+
+      .fa-fw {
+        margin: -2px 0 0 -2px;
+      }
+    }
+
+    &--arrow--right {
+      right: 24px;
+
+      .fa-fw {
+        margin: -2px -2px 0 0;
+      }
+    }
+  }
+
+  /*
+    2. Share modal/popup and links
+  */
+  &__counter,
+  &__share-modal {
+    user-select: none;
+  }
+
+  &__share-modal {
+    display: block;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    position: absolute;
+    z-index: 1600;
+    opacity: 0;
+    transition: opacity 0.25s ease-out;
+    will-change: opacity;
+
+    &--hidden {
+      display: none;
+    }
+
+    &--fade-in {
+      opacity: 1;
+
+      .pswp__share-tooltip {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  &__share-tooltip {
+    z-index: 1620;
+    position: absolute;
+    background: #FFF;
+    top: 56px;
+    border-radius: 2px;
+    display: block;
+    width: auto;
+    right: 44px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+    transform: translateY(6px);
+    transition: transform 0.25s;
+    will-change: transform;
+
+    a {
+      display: block;
+      padding: 8px 12px;
+      color: #000;
+      text-decoration: none;
+      font-size: 14px;
+      line-height: 18px;
+
+      &:hover {
+        text-decoration: none;
+        color: #000;
+      }
+
+      &:first-child {
+        /* round corners on the first/last list item */
+        border-radius: 2px 2px 0 0;
+      }
+
+      &:last-child {
+        border-radius: 0 0 2px 2px;
+      }
+    }
+  }
+
+  /* increase size of share links on touch devices */
+  &--touch {
+    .pswp__share-tooltip a {
+      padding: 16px 12px;
+    }
+  }
+
+  /*
+    3. Index indicator ("1 of X" counter)
+  */
+  &__counter {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 44px;
+    font-size: var(--font-size-s);
+    line-height: 44px;
+    color: #FFF;
+    opacity: 0.75;
+    padding: 0 10px;
+  }
+
+  /*
+    4. Caption
+  */
+  &__caption {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    min-height: 44px;
+
+    small {
+      font-size: 11px;
+      color: #BBB;
+    }
+
+    &--empty {
+      display: none;
+    }
+
+    /* Fake caption element, used to calculate height of next/prev image */
+    &--fake {
+      visibility: hidden;
+    }
+
+    &__center {
+      text-align: center;
+      max-width: 420px;
+      margin: 0 auto;
+      font-size: var(--font-size-base);
+      padding: 10px;
+      line-height: 20px;
+      color: #CCC;
+      font-weight: var(--font-semi-bold);
+    }
+  }
+
+  /*
+    5. Loading indicator (preloader)
+    You can play with it here - http://codepen.io/dimsemenov/pen/yyBWoR
+  */
+  &__preloader {
+    width: 44px;
+    height: 44px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -22px;
+    opacity: 0;
+    transition: opacity 0.25s ease-out;
+    will-change: opacity;
+    direction: ltr;
+
+    &__icn {
+      width: 20px;
+      height: 20px;
+      margin: 12px;
+    }
+
+    &--active {
+      opacity: 1;
+
+      .pswp__preloader__icn {
+        /* We use .gif in browsers that don't support CSS animation */
+        background: url(/WebPatterns/img/PhotoswipePreloader.gif?18249&18249&18397) 0 0 no-repeat;
+      }
+    }
+
+    @media screen and (max-width: 1024px) {
+      position: relative;
+      left: auto;
+      top: auto;
+      margin: 0;
+      float: right;
+    }
+  }
+}
+
+a.pswp__share {
+  &--facebook:before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: -12px;
+    right: 15px;
+    border: 6px solid transparent;
+    border-bottom-color: #FFF;
+    pointer-events: none;
+  }
+
+  &--facebook:hover {
+    background: #3E5C9A;
+    color: #FFF;
+
+    &:before {
+      border-bottom-color: #3E5C9A;
+    }
+  }
+
+  &--twitter:hover {
+    background: #55ACEE;
+    color: #FFF;
+  }
+
+  &--pinterest:hover {
+    background: #CCC;
+    color: #CE272D;
+  }
+
+  &--download:hover {
+    background: #DDD;
+  }
+}
+
+
+
+
+
+.pswp--css_animation {
+  .pswp__preloader--active {
+    opacity: 1;
+
+    .pswp__preloader__icn {
+      animation: clockwise 500ms linear infinite;
+    }
+
+    .pswp__preloader__donut {
+      animation: donut-rotate 1000ms cubic-bezier(0.4, 0, 0.22, 1) infinite;
+    }
+  }
+
+  .pswp__preloader__icn {
+    background: none;
+    opacity: 0.75;
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    margin: 0;
+  }
+
+  .pswp__preloader__cut {
+    /* 
+      The idea of animating inner circle is based on Polymer ("material") loading indicator 
+      by Keanu Lee https://blog.keanulee.com/2014/10/20/the-tale-of-three-spinners.html
+    */
+    position: relative;
+    width: 7px;
+    height: 14px;
+    overflow: hidden;
+  }
+
+  .pswp__preloader__donut {
+    box-sizing: border-box;
+    width: 14px;
+    height: 14px;
+    border: 2px solid #FFF;
+    border-radius: 50%;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: none;
+    margin: 0;
+  }
+}
+
+
+
+/****     ANIMATIONS      ****/
+@-webkit-keyframes clockwise {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes clockwise {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes donut-rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  50% {
+    transform: rotate(-140deg);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@keyframes donut-rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  50% {
+    transform: rotate(-140deg);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
+}
+
+/*******    6. Additional styles      *******/
+/* root element of UI */
+.pswp__ui {
+  visibility: visible;
+  opacity: 1;
+  z-index: 1550;
+
+  /* pswp__ui--fit class is added when main image "fits" between top bar and bottom bar (caption) */
+  &--fit {
+
+    .pswp__top-bar,
+    .pswp__caption {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  /* pswp__ui--idle class is added when mouse isn't moving for several seconds (JS option timeToIdle) */
+  &--idle {
+    .pswp__top-bar {
+      opacity: 0;
+    }
+
+    .pswp__button--arrow--left,
+    .pswp__button--arrow--right {
+      opacity: 0;
+    }
+  }
+
+  /*
+      pswp__ui--hidden class is added when controls are hidden
+      e.g. when user taps to toggle visibility of controls
+  */
+  &--hidden {
+
+    .pswp__top-bar,
+    .pswp__caption,
+    .pswp__button--arrow--left,
+    .pswp__button--arrow--right {
+      /* Force paint & create composition layer for controls. */
+      opacity: 0.001;
+    }
+  }
+
+  /* pswp__ui--one-slide class is added when there is just one item in gallery */
+  &--one-slide {
+
+    .pswp__button--arrow--left,
+    .pswp__button--arrow--right,
+    .pswp__counter {
+      display: none;
+    }
+  }
+
+  /* pswp__ui--over-close class it added when mouse is over element that should close gallery */
+  &--over-close {
+    .pswp__button--close {
+      opacity: 1;
+    }
+  }
+}
+
+/* top black bar with buttons and "1 of X" indicator */
+.pswp__top-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 44px;
+  width: 100%;
+}
+
+.pswp__caption,
+.pswp__top-bar,
+.pswp--has_mouse .pswp__button--arrow--left,
+.pswp--has_mouse .pswp__button--arrow--right {
+  will-change: opacity;
+  transition: opacity 333ms cubic-bezier(0.4, 0, 0.22, 1);
+}
+
+/* pswp--has_mouse class is added only when two subsequent mousemove events occur */
+.pswp--has_mouse .pswp__button--arrow--left,
+.pswp--has_mouse .pswp__button--arrow--right {
+  visibility: visible;
+}
+
+.pswp__top-bar,
+.pswp__caption {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.pswp__element--disabled {
+  display: none !important;
+}
+
+.pswp--minimal--dark .pswp__top-bar {
+  background: none;
+}
+
+[data-size]+figcaption {
+  display: none;
+}

@@ -1,0 +1,27 @@
+/* $4.1.14 - Patterns - Content - Section */
+
+.section {
+    position: relative;
+
+    &-header {
+        align-items: center;
+        border-bottom: var(--border-size-s) solid var(--color-neutral-4);
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: var(--space-s);
+    }
+
+    &-title {
+        flex: 1;
+        font-size: var(--font-size-h2);
+        font-weight: var(--font-semi-bold);
+    }
+
+    &-actions {
+        margin-left: var(--space-xs);
+    }
+
+    &-content {
+        padding-top: var(--space-s);
+    }
+}

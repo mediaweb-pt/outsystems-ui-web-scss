@@ -1,0 +1,184 @@
+/* ===================================================================== */
+/* ===================================================================== */
+
+/*  OutSystems UI Web                                                    */
+
+/*  $0 - Root - CSS Variables                                            */
+/*  $1 - Resets (https://necolas.github.io/normalize.css/)               */
+/*  $2 - HTML Elements                                                   */
+/*       $2.1 - HTML Elements - Links                                    */
+/*       $2.2 - HTML Elements - Images                                   */
+/*       $2.3 - HTML Elements - Headings                                 */
+/*       $2.4 - HTML Elements - Inputs and Selectors                     */
+/*       $2.5 - HTML Elements - Buttons                                  */
+/*  $3 - Page Layout                                                     */
+/*       $3.1 - Page Layout - Header                                     */
+/*              $3.1.1 - Page Layout - Header Top                        */
+/*              $3.1.2 - Page Layout - Header Content                    */
+/*       $3.2 - Page Layout - Menu                                       */
+/*       $3.3 - Page Layout - Content                                    */
+/*  $4 - Patterns                                                        */
+/*       $4.1 - Patterns - Content                                       */
+/*              $4.1.1   - Patterns - Content - Accordion                */
+/*              $4.1.2   - Patterns - Content - Alert                    */
+/*              $4.1.3   - Patterns - Content - Balloon                  */
+/*              $4.1.4   - Patterns - Content - BlankSlate               */
+/*              $4.1.5   - Patterns - Content - Bullets                  */
+/*              $4.1.6   - Patterns - Content - Card                     */
+/*              $4.1.7   - Patterns - Content - CardBackground           */
+/*              $4.1.8   - Patterns - Content - CardSectioned            */
+/*              $4.1.9   - Patterns - Content - Carousel                 */
+/*              $4.1.10  - Patterns - Content - ChatMessage              */
+/*              $4.1.11  - Patterns - Content - LightBoxImage            */
+/*              $4.1.12  - Patterns - Content - Modal                    */
+/*              $4.1.13  - Patterns - Content - Panel                    */
+/*              $4.1.14  - Patterns - Content - Section                  */
+/*              $4.1.15  - Patterns - Content - Tag                      */
+/*              $4.1.16  - Patterns - Content - Tooltip                  */
+/*       $4.2 - Patterns - Controls                                      */
+/*              $4.2.1   - Patterns - Controls - AnimatedLabel           */
+/*              $4.2.2   - Patterns - Controls - ButtonGroup             */
+/*              $4.2.3   - Patterns - Controls - DatePicker              */
+/*              $4.2.4   - Patterns - Controls - Dropdown                */
+/*              $4.2.5   - Patterns - Controls - DropdownSelect          */
+/*              $4.2.6   - Patterns - Controls - FileUpload              */
+/*              $4.2.7   - Patterns - Controls - FloatingActions         */
+/*              $4.2.8   - Patterns - Controls - InputWithIcon           */
+/*              $4.2.9   - Patterns - Controls - RangeSlider             */
+/*              $4.2.10  - Patterns - Controls - Search                  */
+/*              $4.2.11  - Patterns - Controls - SearchBalloon           */
+/*              $4.2.12  - Patterns - Controls - TimePicker              */
+/*              $4.2.13  - Patterns - Controls - ToggleButton            */
+/*              $4.2.14  - Patterns - Controls - Video                   */
+/*       $4.3 - Patterns - Layouts                                       */
+/*              $4.3.1   - Patterns - Layouts - Logins                   */
+/*       $4.4 - Patterns - Navigation                                    */
+/*              $4.4.1   - Patterns - Navigation - Breadcrumbs           */
+/*              $4.4.2   - Patterns - Navigation - NavigationBar         */
+/*              $4.4.3   - Patterns - Navigation - SectionIndex          */
+/*              $4.4.4   - Patterns - Navigation - Sidebar               */
+/*              $4.4.5   - Patterns - Navigation - Tabs                  */
+/*              $4.4.6   - Patterns - Navigation - Timeline              */
+/*              $4.4.7   - Patterns - Navigation - Wizard                */
+/*       $4.5 - Patterns - Numbers                                       */
+/*              $4.5.1   - Patterns - Numbers - Badge                    */
+/*              $4.5.2   - Patterns - Numbers - Counter                  */
+/*              $4.5.3   - Patterns - Numbers - IconBadge                */
+/*              $4.5.4   - Patterns - Numbers - ProgressBar              */
+/*              $4.5.5   - Patterns - Numbers - ProgressCircle           */
+/*              $4.5.6   - Patterns - Numbers - UserAvatar               */
+/*       $4.6 - Patterns - Responsive                                    */
+/*              $4.6.1   - Patterns - Responsive - DisplayOnDevice       */
+/*              $4.6.2   - Patterns - Responsive - LoadOnVisible         */
+/*              $4.6.3   - Patterns - Responsive - MoveOnDevice          */
+/*              $4.6.4   - Patterns - Responsive - ResponsiveTables      */
+/*       $4.7 - Patterns - Structure                                     */
+/*              $4.7.1   - Patterns - Structure - AlignCenter            */
+/*              $4.7.2   - Patterns - Structure - Columns                */
+/*              $4.7.3   - Patterns - Structure - Gallery                */
+/*       $4.8 - Patterns - Utilities                                     */
+/*              $4.8.1   - Patterns - Utilities - Animate                */
+/*              $4.8.2   - Patterns - Utilities - CharacterCount         */
+/*              $4.8.3   - Patterns - Utilities - FlipContent            */
+/*              $4.8.4   - Patterns - Utilities - Fieldset               */
+/*              $4.8.5   - Patterns - Utilities - FlipContent            */
+/*              $4.8.6   - Patterns - Utilities - Iframe                 */
+/*              $4.8.7   - Patterns - Utilities - Separator              */
+/*              $4.8.8   - Patterns - Utilities - StackedIcon            */
+/*  $5 - Widgets & RichWidgets                                           */
+/*       $5.1 - Widgets - Form / EditRecord                              */
+/*       $5.2 - Widgets - TableRecords / EditableTable                   */
+/*       $5.3 - RichWidgets - CounterMessage                             */
+/*       $5.4 - RichWidgets - FeedbackAjaxWait                           */
+/*       $5.5 - RichWidgets - FeedbackMessage                            */
+/*       $5.6 - RichWidgets - Pagination                                 */
+/*       $5.7 - RichWidgets - PopupEditor                                */
+/*       $5.8 - RichWidgets - FiltersWrapper                             */
+/*  $6 - Styles                                                          */
+/*       $6.1 - Styles - Typography                                      */
+/*              $6.1.1 - Styles - Typography - Sizes Desktop             */
+/*              $6.1.2 - Styles - Typography - Sizes Tablet              */
+/*              $6.1.3 - Styles - Typography - Sizes Phone               */
+/*              $6.1.4 - Styles - Typography - Transform                 */
+/*              $6.1.5 - Styles - Typography - Weight                    */
+/*       $6.2 - Styles - Colors                                          */
+/*              $6.2.1 - Styles - Colors - Brand                         */
+/*              $6.2.2 - Styles - Colors - Extendend                     */
+/*              $6.2.3 - Styles - Colors - Neutral                       */
+/*              $6.2.4 - Styles - Colors - Semantic                      */
+/*       $6.3 - Styles - Space                                           */
+/*              $6.3.1  - Styles - Space - Padding                       */
+/*              $6.3.2  - Styles - Space - Padding Top                   */
+/*              $6.3.3  - Styles - Space - Padding Right                 */
+/*              $6.3.4  - Styles - Space - Padding Bottom                */
+/*              $6.3.5  - Styles - Space - Padding Left                  */
+/*              $6.3.6  - Styles - Space - Padding Vertical              */
+/*              $6.3.7  - Styles - Space - Padding Horizontal            */
+/*              $6.3.8  - Styles - Space - Margin                        */
+/*              $6.3.9  - Styles - Space - Margin Top                    */
+/*              $6.3.10 - Styles - Space - Margin Right                  */
+/*              $6.3.11 - Styles - Space - Margin Bottom                 */
+/*              $6.3.12 - Styles - Space - Margin Left                   */
+/*              $6.3.13 - Styles - Space - Margin Vertical               */
+/*              $6.3.14 - Styles - Space - Margin Horizontal             */
+/*       $6.4 - Styles - Border Radius                                   */
+/*       $6.5 - Styles - Border Size                                     */
+/*       $6.6 - Styles - Elevation/Shadows                               */
+/*       $6.7 - Styles - Display Flex Properties                         */
+/*       $6.8 - Styles - Others                                          */
+/*  $7 - Right-to-Left Mode                                              */
+/*       $7.1 - RTL Mode - Page Layout / HTML Elements                   */
+/*       $7.2 - RTL Mode - Patterns - Content                            */
+/*              $7.2.1 - RTL Mode - Patterns - Content - Alert           */
+/*              $7.2.2 - RTL Mode - Patterns - Content - CardSectioned   */
+/*              $7.2.3 - RTL Mode - Patterns - Content - ChatMessage     */
+/*       $7.3 - RTL Mode - Patterns - Controls                           */
+/*              $7.3.1 - RTL Mode - Patterns - Controls - AnimatedLabel  */
+/*              $7.3.2 - RTL Mode - Patterns - Controls - ButtonGroup    */
+/*              $7.3.3 - RTL Mode - Patterns - Controls - DatePicker     */
+/*              $7.3.4 - RTL Mode - Patterns - Controls - FileUpload     */
+/*              $7.3.5 - RTL Mode - Patterns - Controls - FloatingActions*/
+/*              $7.3.6 - RTL Mode - Patterns - Controls - InputWithIcons */
+/*              $7.3.7 - RTL Mode - Patterns - Controls - RangeSlider    */
+/*              $7.3.8 - RTL Mode - Patterns - Controls - ToogleButton   */
+/*       $7.4 - RTL Mode - Patterns - Navigation                         */
+/*              $7.4.1 - RTL Mode - Patterns - Navigation - SectionIndex */
+/*              $7.4.2 - RTL Mode - Patterns - Navigation - Sidebar      */
+/*              $7.4.3 - RTL Mode - Patterns - Navigation - Tabs         */
+/*              $7.4.4 - RTL Mode - Patterns - Navigation - Timeline     */
+/*              $7.4.5 - RTL Mode - Patterns - Navigation - Wizard       */
+/*       $7.5 - RTL Mode - Patterns - Numbers                            */
+/*              $7.5.1 - RTL Mode - Patterns - Numbers - ProgressBar     */
+/*       $7.6 - RTL Mode - Patterns - Responsive                         */
+/*              $7.6.1 - RTL Mode - Patterns - Responsive - TableRecords */
+/*       $7.7 - RTL Mode - Widgets & RichWidgets                         */
+/*              $7.7.1 - RTL Mode - Widgets - TableRecords               */
+/*              $7.7.2 - RTL Mode - RichWidgets - FeedbackAjaxWait       */
+/*              $7.7.3 - RTL Mode - RichWidgets - FeedbackMessage        */
+/*              $7.7.4 - RTL Mode - RichWidgets - Pagination             */
+/*       $7.8 - RTL Mode - Styles                                        */
+/*              $7.8.1 - RTL Mode - Styles - Space - Padding Right       */
+/*              $7.8.2 - RTL Mode - Styles - Space - Padding Left        */
+/*              $7.8.3 - RTL Mode - Styles - Space - Margin Right        */
+/*              $7.8.4 - RTL Mode - Styles - Space - Margin Left         */
+/*              $7.8.5 - RTL Mode - Styles - Others                      */
+/* ===================================================================== */
+/* ===================================================================== */
+
+
+
+
+
+@import "1-abstract/root";
+@import "2-base/resets";
+@import "2-base/html_elements";
+@import "4-layout/page_layout";
+@import "3-components/os-patterns/content/main_content";
+@import "3-components/os-patterns/controls/main_controls.scss";
+@import "3-components/os-patterns/layout/main_layout.scss";
+@import "3-components/os-patterns/navigation/main_navigation.scss";
+@import "3-components/os-patterns/number/main_number.scss";
+@import "3-components/os-patterns/responsive/main_responsive.scss";
+@import "3-components/os-patterns/structure/main_structure.scss";
+@import "3-components/os-patterns/utilities/main_utilities.scss";
+@import "2-base/typography.scss";

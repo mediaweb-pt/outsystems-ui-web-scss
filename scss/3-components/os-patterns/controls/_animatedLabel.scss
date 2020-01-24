@@ -1,0 +1,128 @@
+/* $4.2.1 - Patterns - Controls - AnimatedLabel */
+.animated-label {
+  position: relative;
+  display: block;
+
+  &.active {
+    .animated-label-text {
+      font-size: var(--font-size-xs);
+      top: 4px;
+    }
+  }
+
+  input:-webkit-autofill {
+    animation-name: onAutoFillStart;
+
+    transition: background-color 10000s ease-in-out 0s;
+  }
+
+  input:not(:-webkit-autofill) {
+    animation-name: onAutoFillCancel;
+  }
+
+  &-text {
+    color: var(--color-neutral-8);
+    left: 16px;
+    pointer-events: none;
+    position: absolute;
+    top: 15px;
+    transition: all 300ms ease;
+    -servicestudio-position: relative;
+    -servicestudio-top: auto;
+  }
+
+  &-input .input,
+  .layout .Form &-input .input.Not_Valid {
+    height: auto;
+    padding: var(--space-m) var(--space-base) var(--space-s) var(--space-base);
+  }
+
+  &-inline &-text {
+    left: 0;
+  }
+
+  &-inline .input,
+  .layout .Form &-inline .input.ReadOnly:not(.Not_Valid) {
+    background-color: transparent;
+    border-left: 0;
+    border-radius: var(--border-radius-none);
+    border-right: 0;
+    border-top: 0;
+    padding: var(--space-m) var(--space-none) var(--space-xs) var(--space-none);
+
+    &:hover {
+      border: 0;
+      border-bottom: var(--border-size-s) solid var(--color-neutral-6);
+    }
+
+    &:focus {
+      border: 0;
+      border-bottom: var(--border-size-s) solid var(--color-primary);
+    }
+  }
+
+  .layout .Form &-inline .input.ReadOnly:not(.Not_Valid):hover {
+    border-left: 0;
+    border-radius: var(--border-radius-none);
+    border-right: 0;
+    border-top: 0;
+  }
+
+  &-inline .input.Not_Valid,
+  .layout .Form &-inline .input.Not_Valid {
+    border: 0;
+    border-bottom: var(--border-size-s) solid var(--color-error);
+    padding-left: var(--space-none);
+  }
+
+  &-inline .input.Not_Valid {
+
+    &:hover,
+    &:focus {
+      border: 0;
+      border-bottom: var(--border-size-s) solid var(--color-error);
+    }
+  }
+}
+
+
+
+@-webkit-keyframes onAutoFillStart {
+  from {
+    /**/
+  }
+
+  to {
+    /**/
+  }
+}
+
+@-webkit-keyframes onAutoFillCancel {
+  from {
+    /**/
+  }
+
+  to {
+    /**/
+  }
+}
+
+@keyframes onAutoFillStart {
+  from {
+    /**/
+  }
+
+  to {
+    /**/
+  }
+}
+
+@keyframes onAutoFillCancel {
+  from {
+    /**/
+  }
+
+  to {
+    /**/
+  }
+}

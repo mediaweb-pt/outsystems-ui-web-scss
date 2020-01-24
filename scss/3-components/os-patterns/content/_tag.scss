@@ -1,0 +1,58 @@
+/* $4.1.15 - Patterns - Content - Tag */
+
+.tag {
+  align-items: center;
+  background-color: var(--color-primary);
+  color: var(--color-neutral-0);
+  display: inline-flex;
+  font-weight: var(--font-semi-bold);
+  height: 32px;
+  justify-content: center;
+  line-height: 1;
+  min-width: 32px;
+  padding: var(--space-none) var(--space-base);
+  word-break: normal;
+
+  &.tag-small {
+    font-size: var(--font-size-xs);
+    height: 24px;
+    padding: var(--space-none) var(--space-s);
+  }
+
+  &.tag-medium {
+    font-size: var(--font-size-base);
+    height: 40px;
+    padding: var(--space-none) var(--space-m);
+  }
+
+  &.background-neutral-0,
+  &.background-neutral-1,
+  &.background-neutral-2,
+  &.background-neutral-3,
+  &.background-neutral-4 {
+    color: var(--color-neutral-9);
+  }
+}
+
+.tag-content:empty {
+  -servicestudio-min-width: 150px;
+}
+
+/* $4.1.16 - Patterns - Content - Tooltip */
+.tooltip {
+  background-color: var(--color-neutral-9);
+  border-radius: var(--border-radius-soft);
+  color: var(--color-neutral-0);
+  padding: var(--space-xs) var(--space-s);
+  text-align: center;
+  z-index: 50;
+  display: none;
+
+  &:empty {
+    -servicestudio-min-width: 170px;
+  }
+
+  .tippy-popper & {
+    display: block;
+  }
+}

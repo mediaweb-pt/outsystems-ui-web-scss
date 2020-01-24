@@ -1,0 +1,47 @@
+/* $4.1.13 - Patterns - Content - Panel */
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-none);
+
+  &-header {
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &-title {
+    font-size: var(--font-size-h4);
+    font-weight: var(--font-semi-bold);
+    padding: var(--space-m) var(--space-m) var(--space-none) var(--space-m);
+  }
+
+  &-actions {
+    text-align: right;
+    padding: var(--space-m) var(--space-m) var(--space-none) var(--space-m);
+  }
+
+  &-content {
+    flex: 1;
+    padding: var(--space-m);
+  }
+
+  .ie10 &-content,
+  .ie11 &-content {
+    flex: none;
+  }
+
+  &-footer {
+    align-items: center;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: var(--space-none) var(--space-m) var(--space-m);
+  }
+}
