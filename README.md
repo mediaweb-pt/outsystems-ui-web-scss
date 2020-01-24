@@ -1,4 +1,6 @@
-# OutSystems UI Theme Generator
+# OutSystems UI Web SCSS
+
+OutSystems UI Web Web version converted to SCSS.
 
 Use this project to create customizations of OutSystems UI using SCSS.
 This will increase your development speed and reduce the maintenance costs overtime.
