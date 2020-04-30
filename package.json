@@ -22,7 +22,7 @@
     "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.0.2",
     "gulp-util": "^3.0.8",
-    "jquery": "3.4.1",
+    "jquery": "3.5.0",
     "postcss-cli": "^7.0.0"
   },
   "devDependencies": {
